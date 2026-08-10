@@ -1,10 +1,21 @@
 # Dental 7 Aesthetics
 
-Official website for **Dental 7 Aesthetics**, a dental clinic in Karachi, Pakistan offering general and aesthetic dentistry.
+Official website for **Dental 7 Aesthetics**, a dental clinic in Karachi, Pakistan.
+
+## Live site
+
+**https://zcgllc.github.io/Dental7Aesthetics/**
+
+## Pages
+
+- Home — `/`
+- Services — `/services/`
+- About Us — `/about/`
+- Visit — `/visit/`
 
 ## Stack
 
-- Next.js (App Router)
+- Next.js (App Router, static export)
 - TypeScript
 - Tailwind CSS
 - Framer Motion
@@ -12,14 +23,27 @@ Official website for **Dental 7 Aesthetics**, a dental clinic in Karachi, Pakist
 ## Develop
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
 
+## Production build
+
+```bash
+npm run build
+npm start
+```
+
+For GitHub Pages assets:
+
+```bash
+npm run build:pages
+```
+
 ## Brand
 
-- Logo assets live in `public/brand/` (official clinic mark)
-- Clinic Instagram: [instagram.com/dental7aesthetics](https://www.instagram.com/dental7aesthetics/)
+- Logo assets: `public/brand/`
+- Instagram: [instagram.com/dental7aesthetics](https://www.instagram.com/dental7aesthetics/)
 - Location: Jinnah Avenue, opposite Malir Cantt, Karachi
