@@ -1,11 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { services, type Service } from "@/lib/content";
 
 const filters = ["All", "Cosmetic", "General", "Restorative", "Specialty"] as const;
-
 type Filter = (typeof filters)[number];
 
 export function Services() {
@@ -17,7 +16,7 @@ export function Services() {
       : services.filter((service) => service.category === filter);
 
   return (
-    <section id="services" className="relative px-5 py-24 md:px-8 md:py-32">
+    <section className="relative px-5 py-20 md:px-8 md:py-24">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
           <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
@@ -28,7 +27,7 @@ export function Services() {
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted md:text-lg">
             From preventive visits to full smile rehabilitations—every essential
-            service a modern dental clinic should offer, under one composed roof.
+            service a modern dental clinic should offer.
           </p>
         </div>
 

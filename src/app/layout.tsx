@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Jost } from "next/font/google";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import "./globals.css";
 
 const display = Cormorant_Garamond({
@@ -16,7 +18,10 @@ const body = Jost({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://dental7aesthetics.com"),
-  title: "Dental 7 Aesthetics | Classy Dental Care in Karachi",
+  title: {
+    default: "Dental 7 Aesthetics | Classy Dental Care in Karachi",
+    template: "%s | Dental 7 Aesthetics",
+  },
   description:
     "Dental 7 Aesthetics is a Karachi dental clinic offering general and aesthetic dentistry—whitening, veneers, implants, orthodontics, root canals, and complete smile care near Malir Cantt.",
   keywords: [
@@ -37,7 +42,7 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "/brand/logo.png",
+    icon: "/brand/logo-512.png",
     apple: "/brand/logo-512.png",
   },
 };
@@ -50,7 +55,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${display.variable} ${body.variable} font-body antialiased`}>
-        {children}
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

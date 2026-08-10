@@ -1,19 +1,23 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { clinic } from "@/lib/content";
 
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#care", label: "Care" },
-  { href: "#visit", label: "Visit" },
+  { href: "/", label: "Home" },
+  { href: "/services/", label: "Services" },
+  { href: "/about/", label: "About Us" },
+  { href: "/visit/", label: "Visit" },
 ];
 
 export function Header() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const isHome = pathname === "/" || pathname === "";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -22,22 +26,28 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  const solid = scrolled || !isHome || open;
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-navy-950/85 backdrop-blur-xl border-b border-white/10"
+        solid
+          ? "bg-navy-950/90 backdrop-blur-xl border-b border-white/10"
           : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
-        <a href="#top" className="group flex items-center gap-3">
+        <Link href="/" className="group flex items-center gap-3">
           <Image
-            src="/brand/logo.png"
+            src="/brand/logo-512.png"
             alt="Dental 7 Aesthetics logo"
-            width={44}
-            height={44}
-            className="h-11 w-11 rounded-full shadow-glow transition-transform duration-500 group-hover:scale-105"
+            width={52}
+            height={52}
+            className="h-12 w-12 rounded-full shadow-glow transition-transform duration-500 group-hover:scale-105 md:h-[52px] md:w-[52px]"
             priority
           />
           <div className="leading-tight">
@@ -48,18 +58,26 @@ export function Header() {
               Karachi
             </p>
           </div>
-        </a>
+        </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm text-silver-200/90 transition-colors hover:text-white"
-            >
-              {link.label}
-            </a>
-          ))}
+        <nav className="hidden items-center gap-7 md:flex">
+          {links.map((link) => {
+            const active =
+              link.href === "/"
+                ? isHome
+                : pathname === link.href || pathname === link.href.replace(/\/$/, "");
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-sm transition-colors ${
+                  active ? "text-white" : "text-silver-200/90 hover:text-white"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
           <a
             href={clinic.instagram}
             target="_blank"
@@ -93,21 +111,15 @@ export function Header() {
         <div className="border-t border-white/10 bg-navy-950/95 px-5 py-5 backdrop-blur-xl md:hidden">
           <div className="flex flex-col gap-4">
             {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-silver-100"
-                onClick={() => setOpen(false)}
-              >
+              <Link key={link.href} href={link.href} className="text-silver-100">
                 {link.label}
-              </a>
+              </Link>
             ))}
             <a
               href={clinic.instagram}
               target="_blank"
               rel="noreferrer"
               className="rounded-sm bg-white px-5 py-3 text-center text-sm text-navy-900"
-              onClick={() => setOpen(false)}
             >
               Book via Instagram
             </a>

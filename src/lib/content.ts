@@ -12,6 +12,33 @@ export const clinic = {
   ],
 };
 
+export const gallery = [
+  {
+    src: "/images/hero.jpg",
+    alt: "Modern dental treatment suite",
+  },
+  {
+    src: "/images/smile.jpg",
+    alt: "Confident refined smile",
+  },
+  {
+    src: "/images/clinic.jpg",
+    alt: "Calm clinical care moment",
+  },
+  {
+    src: "/images/treatment.jpg",
+    alt: "Precision dental treatment",
+  },
+  {
+    src: "/images/consult.jpg",
+    alt: "Consultation and diagnosis",
+  },
+  {
+    src: "/images/tools.jpg",
+    alt: "Aesthetic dental craftsmanship",
+  },
+];
+
 export const team = [
   {
     name: "Dr. Abdullah Baig",

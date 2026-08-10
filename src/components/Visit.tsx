@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { clinic } from "@/lib/content";
 
@@ -27,19 +28,13 @@ export function Visit() {
       .filter(Boolean)
       .join("\n");
 
-    window.open(
-      `${clinic.instagram}`,
-      "_blank",
-      "noopener,noreferrer",
-    );
-
-    // Keep a local confirmation and copy-ready message for the visitor.
+    window.open(clinic.instagram, "_blank", "noopener,noreferrer");
     void navigator.clipboard?.writeText(text).catch(() => undefined);
     setSent(true);
   }
 
   return (
-    <section id="visit" className="px-5 py-24 md:px-8 md:py-32">
+    <section className="px-5 py-20 md:px-8 md:py-24">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -47,10 +42,19 @@ export function Visit() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
-            Visit Us
-          </p>
-          <h2 className="font-display mt-4 text-4xl text-navy-900 md:text-5xl">
+          <div className="mb-6 flex items-center gap-4">
+            <Image
+              src="/brand/logo-512.png"
+              alt="Dental 7 Aesthetics logo"
+              width={64}
+              height={64}
+              className="h-16 w-16 rounded-full"
+            />
+            <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
+              Visit Us
+            </p>
+          </div>
+          <h2 className="font-display text-4xl text-navy-900 md:text-5xl">
             Begin with a consultation in Karachi.
           </h2>
           <p className="mt-5 max-w-md text-base leading-relaxed text-muted md:text-lg">
@@ -70,9 +74,9 @@ export function Visit() {
               <p className="text-[11px] uppercase tracking-[0.2em] text-silver-500">
                 Hours
               </p>
-              <ul className="mt-2 space-y-1 text-navy-900">
+              <ul className="mt-2 max-w-sm space-y-1 text-navy-900">
                 {clinic.hours.map((item) => (
-                  <li key={item.day} className="flex justify-between gap-6 max-w-sm">
+                  <li key={item.day} className="flex justify-between gap-6">
                     <span>{item.day}</span>
                     <span className="text-muted">{item.time}</span>
                   </li>
@@ -140,13 +144,20 @@ export function Visit() {
                 className="mt-2 w-full border-b border-white/20 bg-navy-900 py-3 outline-none transition focus:border-white"
                 defaultValue="Smile Design & Makeovers"
               >
-                {["Smile Design & Makeovers", "Teeth Whitening", "Dental Checkup", "Root Canal", "Implants", "Braces / Aligners", "Emergency Care", "Other"].map(
-                  (option) => (
-                    <option key={option} value={option}>
-                      {option}
-                    </option>
-                  ),
-                )}
+                {[
+                  "Smile Design & Makeovers",
+                  "Teeth Whitening",
+                  "Dental Checkup",
+                  "Root Canal",
+                  "Implants",
+                  "Braces / Aligners",
+                  "Emergency Care",
+                  "Other",
+                ].map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
               </select>
             </label>
             <label className="block sm:col-span-2">
