@@ -164,7 +164,7 @@ export function Visit() {
 
           <button
             type="submit"
-            className="mt-8 w-full rounded-full bg-white px-6 py-3.5 text-sm font-medium text-navy-900 transition hover:bg-silver-200"
+            className="mt-8 w-full rounded-sm bg-white px-6 py-3.5 text-sm font-medium text-navy-900 transition hover:bg-silver-200"
           >
             Continue on Instagram
           </button>

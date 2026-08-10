@@ -64,7 +64,7 @@ export function Header() {
             href={clinic.instagram}
             target="_blank"
             rel="noreferrer"
-            className="rounded-full border border-white/25 bg-white/10 px-5 py-2.5 text-sm text-white transition hover:bg-white hover:text-navy-900"
+            className="rounded-sm border border-white/25 bg-white/10 px-5 py-2.5 text-sm text-white transition hover:bg-white hover:text-navy-900"
           >
             Book via Instagram
           </a>
@@ -106,7 +106,7 @@ export function Header() {
               href={clinic.instagram}
               target="_blank"
               rel="noreferrer"
-              className="rounded-full bg-white px-5 py-3 text-center text-sm text-navy-900"
+              className="rounded-sm bg-white px-5 py-3 text-center text-sm text-navy-900"
               onClick={() => setOpen(false)}
             >
               Book via Instagram

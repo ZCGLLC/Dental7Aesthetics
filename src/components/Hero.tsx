@@ -53,13 +53,13 @@ export function Hero() {
               href={clinic.instagram}
               target="_blank"
               rel="noreferrer"
-              className="rounded-full bg-white px-7 py-3.5 text-sm font-medium tracking-wide text-navy-900 transition hover:bg-silver-200"
+              className="rounded-sm bg-white px-7 py-3.5 text-sm font-medium tracking-wide text-navy-900 transition hover:bg-silver-200"
             >
               Reserve a Consultation
             </a>
             <a
               href="#services"
-              className="rounded-full border border-white/30 px-7 py-3.5 text-sm tracking-wide text-white transition hover:border-white hover:bg-white/10"
+              className="rounded-sm border border-white/30 px-7 py-3.5 text-sm tracking-wide text-white transition hover:border-white hover:bg-white/10"
             >
               Explore Services
             </a>
