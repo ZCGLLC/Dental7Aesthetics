@@ -1,22 +1,23 @@
 import type { Metadata } from "next";
 import { PageBanner } from "@/components/PageBanner";
 import { Services } from "@/components/Services";
+import { pageCopy } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Explore Dental 7 Aesthetics services in Karachi—cosmetic dentistry, whitening, veneers, implants, orthodontics, root canals, and complete family dental care.",
+    "Dentist-led services at Dental 7 Aesthetics in Karachi—checkups, whitening, veneers, root canals, implants, orthodontics, and emergency dental care.",
 };
 
 export default function ServicesPage() {
   return (
     <>
       <PageBanner
-        eyebrow="Services"
-        title="Every essential dental service, under one composed roof."
-        subtitle="Cosmetic, general, restorative, and specialty care designed around comfort and lasting results."
+        eyebrow={pageCopy.services.eyebrow}
+        title={pageCopy.services.title}
+        subtitle={pageCopy.services.subtitle}
         image="/images/treatment.jpg"
-        imageAlt="Dental treatment at Dental 7 Aesthetics"
+        imageAlt="Dentist performing precise clinical treatment"
       />
       <Services />
     </>

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { clinic, gallery } from "@/lib/content";
+import { clinic, gallery, pageCopy } from "@/lib/content";
 
 export function Hero() {
   const [index, setIndex] = useState(0);
@@ -30,8 +30,8 @@ export function Hero() {
           className="absolute inset-0"
         >
           <motion.div
-            initial={{ scale: 1.08 }}
-            animate={{ scale: 1.18 }}
+            initial={{ scale: 1.06 }}
+            animate={{ scale: 1.14 }}
             transition={{ duration: 6.2, ease: "linear" }}
             className="absolute inset-0"
           >
@@ -47,11 +47,11 @@ export function Hero() {
         </motion.div>
       </AnimatePresence>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-navy-950/70 via-navy-900/65 to-navy-950/90" />
-      <div className="texture-grid absolute inset-0 opacity-35" />
+      <div className="absolute inset-0 bg-gradient-to-b from-navy-950/75 via-navy-900/68 to-navy-950/92" />
+      <div className="texture-grid absolute inset-0 opacity-30" />
       <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-pearl to-transparent" />
 
-      <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-5 pb-24 pt-32 md:justify-center md:px-8 md:pb-24 md:pt-28">
+      <div className="relative mx-auto flex min-h-[100svh] w-full max-w-7xl flex-col justify-end px-5 pb-24 pt-32 md:justify-center md:px-8 md:pb-24 md:pt-28">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
@@ -76,22 +76,21 @@ export function Hero() {
           </h1>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-silver-200/95 md:text-lg">
-            Classically composed dental care in Karachi—where clinical excellence
-            meets refined smile aesthetics.
+            {pageCopy.home.subcopy}
           </p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-4">
+          <div className="mt-10 flex flex-wrap items-center gap-3">
             <Link
               href="/visit/"
               className="rounded-sm bg-white px-7 py-3.5 text-sm font-medium tracking-wide text-navy-900 transition hover:bg-silver-200"
             >
-              Book a Visit
+              Book a Consultation
             </Link>
             <Link
               href="/services/"
               className="rounded-sm border border-white/30 px-7 py-3.5 text-sm tracking-wide text-white transition hover:border-white hover:bg-white/10"
             >
-              View Services
+              Clinical Services
             </Link>
           </div>
         </motion.div>
@@ -100,7 +99,7 @@ export function Hero() {
           <p className="max-w-md text-xs uppercase tracking-[0.22em] text-silver-400">
             {clinic.location}
           </p>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2" aria-label="Gallery slides">
             {gallery.map((item, i) => (
               <button
                 key={item.src}

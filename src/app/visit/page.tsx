@@ -1,22 +1,23 @@
 import type { Metadata } from "next";
 import { PageBanner } from "@/components/PageBanner";
 import { Visit } from "@/components/Visit";
+import { pageCopy } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Visit",
   description:
-    "Visit Dental 7 Aesthetics on Jinnah Avenue opposite Malir Cantt, Karachi. Request an appointment via Instagram.",
+    "Book a dental consultation at Dental 7 Aesthetics on Jinnah Avenue, opposite Malir Cantt, Karachi.",
 };
 
 export default function VisitPage() {
   return (
     <>
       <PageBanner
-        eyebrow="Visit"
-        title="Find us in Karachi and reserve your appointment."
-        subtitle="Jinnah Avenue, opposite Malir Cantt—book through Instagram with our appointment form."
+        eyebrow={pageCopy.visit.eyebrow}
+        title={pageCopy.visit.title}
+        subtitle={pageCopy.visit.subtitle}
         image="/images/consult.jpg"
-        imageAlt="Dental consultation"
+        imageAlt="Dental consultation and examination"
       />
       <Visit />
     </>

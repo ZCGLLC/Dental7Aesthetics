@@ -1,6 +1,7 @@
 export const clinic = {
   name: "Dental 7 Aesthetics",
-  tagline: "Certified dental experts in general & aesthetic dentistry",
+  tagline:
+    "As your dentists in Karachi, we protect oral health and design smiles with clinical precision.",
   location: "Jinnah Avenue, opposite Malir Cantt, Karachi",
   city: "Karachi, Pakistan",
   instagram: "https://www.instagram.com/dental7aesthetics/",
@@ -15,40 +16,73 @@ export const clinic = {
 export const gallery = [
   {
     src: "/images/hero.jpg",
-    alt: "Modern dental treatment suite",
+    alt: "Our modern dental operatory prepared for precise treatment",
+  },
+  {
+    src: "/images/atmosphere-clinic.png",
+    alt: "Calm, composed treatment suite at Dental 7 Aesthetics",
   },
   {
     src: "/images/smile.jpg",
-    alt: "Confident refined smile",
+    alt: "Healthy smile following aesthetic dental care",
+  },
+  {
+    src: "/images/atmosphere-smile.png",
+    alt: "Naturally refined smile designed with aesthetic dentistry",
   },
   {
     src: "/images/clinic.jpg",
-    alt: "Calm clinical care moment",
+    alt: "Sterile clinical environment for patient-safe dentistry",
   },
   {
     src: "/images/treatment.jpg",
-    alt: "Precision dental treatment",
+    alt: "Dentist delivering careful restorative treatment",
+  },
+  {
+    src: "/images/hygiene.jpg",
+    alt: "Professional dental hygiene and preventive care",
   },
   {
     src: "/images/consult.jpg",
-    alt: "Consultation and diagnosis",
+    alt: "Chairside consultation and diagnosis",
+  },
+];
+
+export const homeMoments = [
+  {
+    src: "/images/reception.jpg",
+    alt: "Welcoming clinic reception for a calm first visit",
+    caption: "Your first visit starts with a clear exam and honest plan.",
   },
   {
-    src: "/images/tools.jpg",
-    alt: "Aesthetic dental craftsmanship",
+    src: "/images/ortho.jpg",
+    alt: "Orthodontic assessment for aligned bites",
+    caption: "We evaluate bite, alignment, and long-term enamel health together.",
+  },
+  {
+    src: "/images/implant.jpg",
+    alt: "Implant consultation and restorative planning",
+    caption: "Missing teeth are restored for function first, aesthetics always.",
+  },
+  {
+    src: "/images/family.jpg",
+    alt: "Family-focused dental care setting",
+    caption: "From children to adults, we tailor care to every stage of life.",
   },
 ];
 
 export const team = [
   {
     name: "Dr. Abdullah Baig",
-    role: "Founder & CEO",
-    focus: "General & aesthetic dentistry with a calm, precision-led approach.",
+    role: "Founder, Dentist & CEO",
+    focus:
+      "I lead treatment planning across general and aesthetic dentistry—balancing comfort, longevity, and natural-looking results.",
   },
   {
     name: "Dr. Maira Minhaj",
     role: "General Dentist",
-    focus: "Patient-first care across preventive, restorative, and smile treatments.",
+    focus:
+      "I focus on preventive care, restorative dentistry, and smile treatments with a calm chairside manner for every patient.",
   },
 ];
 
@@ -56,142 +90,189 @@ export type Service = {
   title: string;
   description: string;
   category: "Cosmetic" | "General" | "Restorative" | "Specialty";
+  image: string;
 };
 
 export const services: Service[] = [
   {
     title: "Smile Design & Makeovers",
     description:
-      "Bespoke smile planning that balances facial harmony, shade, and lasting function.",
+      "We map facial proportions, tooth shade, and bite before reshaping your smile—so the result looks natural in conversation and on photographs.",
     category: "Cosmetic",
+    image: "/images/atmosphere-smile.png",
   },
   {
     title: "Teeth Whitening",
     description:
-      "Professional whitening for a brighter, naturally luminous smile—safely guided in-clinic.",
+      "In-clinic whitening brightens enamel safely under our supervision. We protect gums, select the right concentration, and set realistic shade goals.",
     category: "Cosmetic",
+    image: "/images/whitening.jpg",
   },
   {
     title: "Porcelain Veneers",
     description:
-      "Ultra-thin ceramic veneers to refine shape, color, and symmetry with elegant detail.",
+      "Ultra-thin ceramic veneers correct shape, color, and minor alignment issues while preserving as much healthy tooth structure as possible.",
     category: "Cosmetic",
+    image: "/images/smile.jpg",
   },
   {
     title: "Cosmetic Bonding",
     description:
-      "Artful composite bonding to repair chips, close gaps, and refresh smile aesthetics.",
+      "We repair chips, close small gaps, and refine edges with tooth-colored composite—often completed in a single comfortable visit.",
     category: "Cosmetic",
+    image: "/images/tools.jpg",
   },
   {
     title: "Dental Checkups & Exams",
     description:
-      "Thorough consultations and oral assessments to protect long-term dental health.",
+      "Every checkup includes a full oral examination, gum assessment, and discussion of findings so you understand your oral health clearly.",
     category: "General",
+    image: "/images/consult.jpg",
   },
   {
     title: "Scaling & Polishing",
     description:
-      "Deep professional cleaning to remove plaque, tartar, and surface stains.",
+      "We remove plaque and calculus above and below the gumline, then polish enamel to reduce stain and support healthier gums.",
     category: "General",
+    image: "/images/hygiene.jpg",
   },
   {
     title: "Preventive Care",
     description:
-      "Fluoride, hygiene coaching, and recall plans designed around your lifestyle.",
+      "Fluoride, hygiene coaching, and recall intervals are personalized to your risk level—because prevention is the foundation of lasting dentistry.",
     category: "General",
+    image: "/images/care.jpg",
   },
   {
     title: "Pediatric Dentistry",
     description:
-      "Gentle, reassuring dental care for children in a calm clinical setting.",
+      "Children receive gentle exams, cleanings, and early guidance in a calm setting so dental visits feel safe from the start.",
     category: "General",
+    image: "/images/family.jpg",
   },
   {
     title: "Tooth-Colored Fillings",
     description:
-      "Natural-looking restorations that repair cavities while preserving tooth structure.",
+      "We treat decay with bonded composite restorations that match your enamel and conserve healthy tooth structure.",
     category: "Restorative",
+    image: "/images/treatment.jpg",
   },
   {
     title: "Root Canal Therapy",
     description:
-      "Comfort-focused endodontic treatment to relieve pain and save natural teeth.",
+      "When pulp infection causes pain, we clean and seal the canals carefully to relieve discomfort and save your natural tooth whenever possible.",
     category: "Restorative",
+    image: "/images/xray.jpg",
   },
   {
     title: "Crowns & Bridges",
     description:
-      "Custom prosthetics that restore strength, bite, and refined aesthetics.",
+      "Custom crowns and bridges restore strength after fracture or large fillings, rebuilding bite function with refined aesthetics.",
     category: "Restorative",
+    image: "/images/implant.jpg",
   },
   {
     title: "Dentures & Partials",
     description:
-      "Well-fitted removable solutions crafted for comfort, speech, and confidence.",
+      "Removable prostheses are fitted for speech, chewing comfort, and a natural appearance—adjusted carefully for daily wear.",
     category: "Restorative",
+    image: "/images/reception.jpg",
   },
   {
     title: "Dental Implants",
     description:
-      "Permanent tooth replacement with implant-supported restorations that feel natural.",
+      "Implants replace missing teeth with a stable foundation for crowns or bridges that look and function like natural teeth.",
     category: "Specialty",
+    image: "/images/implant.jpg",
   },
   {
     title: "Orthodontics & Aligners",
     description:
-      "Braces and clear aligner pathways for straighter teeth and improved bite.",
+      "We correct crowding and bite issues with braces or clear aligners, planning tooth movement for both aesthetics and long-term stability.",
     category: "Specialty",
+    image: "/images/ortho.jpg",
   },
   {
     title: "Gum Therapy",
     description:
-      "Periodontal care for healthier gums, fresher breath, and stable oral foundations.",
+      "Periodontal treatment reduces inflammation, deep cleans infected pockets, and helps stabilize gums that support your teeth.",
     category: "Specialty",
+    image: "/images/hygiene.jpg",
   },
   {
     title: "Wisdom Tooth Care",
     description:
-      "Evaluation and careful extraction when third molars threaten comfort or alignment.",
+      "Impacted or symptomatic third molars are assessed with imaging and removed carefully when they threaten pain, crowding, or infection.",
     category: "Specialty",
+    image: "/images/xray.jpg",
   },
   {
     title: "Oral Surgery Support",
     description:
-      "Extractions and surgical support delivered with clear guidance and aftercare.",
+      "Extractions and minor surgical care are performed with clear consent, sterile protocol, and aftercare instructions you can follow at home.",
     category: "Specialty",
+    image: "/images/treatment.jpg",
   },
   {
     title: "Emergency Dental Care",
     description:
-      "Prompt attention for toothache, trauma, broken restorations, and urgent concerns.",
+      "Toothache, trauma, swelling, or a broken restoration needs prompt attention—we stabilize the problem and explain the next clinical steps.",
     category: "Specialty",
+    image: "/images/clinic.jpg",
   },
   {
     title: "Night Guards & Bite Care",
     description:
-      "Custom appliances to protect enamel from grinding and ease jaw strain.",
+      "Custom night guards protect enamel from grinding and help ease jaw strain linked to clenching during sleep.",
     category: "Specialty",
+    image: "/images/tools.jpg",
   },
   {
     title: "Full Mouth Rehabilitation",
     description:
-      "Comprehensive rebuilding for complex wear, missing teeth, and functional renewal.",
+      "For extensive wear or multiple missing teeth, we rebuild function step by step—restoring bite, comfort, and a cohesive smile.",
     category: "Restorative",
+    image: "/images/atmosphere-clinic.png",
   },
 ];
 
 export const values = [
   {
-    title: "Quiet Confidence",
-    text: "A composed clinical experience—never rushed, never clinical in the cold sense of the word.",
+    title: "Diagnosis First",
+    text: "We examine, listen, and explain before we treat—so every recommendation is based on what your mouth actually needs.",
   },
   {
-    title: "Aesthetic Precision",
-    text: "Every shade, contour, and margin is considered so your smile looks intentional and natural.",
+    title: "Conservative Care",
+    text: "Whenever clinically possible, we preserve natural tooth structure and choose the least invasive option that still lasts.",
   },
   {
-    title: "Honest Guidance",
-    text: "Clear recommendations, transparent options, and care plans that respect your priorities.",
+    title: "Natural Aesthetics",
+    text: "Shade, shape, and gum harmony are planned carefully so cosmetic work looks like your own teeth—only healthier and more refined.",
   },
 ];
+
+export const pageCopy = {
+  home: {
+    headline: "Dental care planned by dentists—for health first, beauty always.",
+    subcopy:
+      "At Dental 7 Aesthetics in Karachi, we diagnose carefully, treat gently, and design smiles that remain functional for years—not just photogenic for a day.",
+  },
+  services: {
+    eyebrow: "Clinical Services",
+    title: "Comprehensive dentistry for every stage of oral health.",
+    subtitle:
+      "From preventive cleanings to implants and smile design, we provide the treatments we would recommend for our own families—explained clearly before we begin.",
+  },
+  about: {
+    eyebrow: "About Our Practice",
+    title: "A dentist-led clinic built on trust, skill, and composed care.",
+    subtitle:
+      "Meet the clinicians behind Dental 7 Aesthetics and the standards that guide every appointment.",
+  },
+  visit: {
+    eyebrow: "Visit the Clinic",
+    title: "Book a consultation and begin with a proper dental assessment.",
+    subtitle:
+      "Visit us on Jinnah Avenue, opposite Malir Cantt. Share your concern and we will guide the right next clinical step.",
+  },
+};

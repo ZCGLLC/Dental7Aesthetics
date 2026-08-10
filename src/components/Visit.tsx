@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { clinic } from "@/lib/content";
+import { Section } from "@/components/Section";
 
 export function Visit() {
   const [sent, setSent] = useState(false);
@@ -18,12 +19,12 @@ export function Visit() {
 
     const text = [
       `Hello Dental 7 Aesthetics,`,
-      `I'd like to book a consultation.`,
+      `I would like to book a dental consultation.`,
       ``,
       `Name: ${name}`,
       `Phone: ${phone}`,
-      `Interest: ${service}`,
-      message ? `Note: ${message}` : "",
+      `Concern / interest: ${service}`,
+      message ? `Details: ${message}` : "",
     ]
       .filter(Boolean)
       .join("\n");
@@ -34,8 +35,8 @@ export function Visit() {
   }
 
   return (
-    <section className="px-5 py-20 md:px-8 md:py-24">
-      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr]">
+    <Section className="py-20 md:py-24">
+      <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,16 +52,27 @@ export function Visit() {
               className="h-16 w-16 rounded-full"
             />
             <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
-              Visit Us
+              Clinic visit
             </p>
           </div>
           <h2 className="font-display text-4xl text-navy-900 md:text-5xl">
-            Begin with a consultation in Karachi.
+            Tell us what is bothering your teeth or smile.
           </h2>
           <p className="mt-5 max-w-md text-base leading-relaxed text-muted md:text-lg">
-            Share a few details and continue on Instagram to confirm your
-            appointment with our team.
+            Share a few details and continue on Instagram. As dentists, we use
+            your note to prepare the right examination and discuss suitable
+            treatment options at your visit.
           </p>
+
+          <div className="relative mt-10 aspect-[16/10] overflow-hidden">
+            <Image
+              src="/images/reception.jpg"
+              alt="Clinic reception ready for patient visits"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
 
           <div className="mt-10 space-y-6 border-t border-navy-900/10 pt-8">
             <div>
@@ -105,15 +117,15 @@ export function Visit() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.08 }}
-          className="shine-border bg-navy-900 p-7 text-white shadow-glow md:p-10"
+          className="shine-border h-fit bg-navy-900 p-7 text-white shadow-glow md:p-10"
         >
-          <h3 className="font-display text-3xl">Request an appointment</h3>
+          <h3 className="font-display text-3xl">Request a dental appointment</h3>
           <p className="mt-2 text-sm text-silver-300">
-            Your message details are copied so you can paste them into Instagram DM.
+            We copy your details so you can paste them into Instagram DM for booking.
           </p>
 
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
-            <label className="block sm:col-span-1">
+            <label className="block">
               <span className="text-xs uppercase tracking-[0.18em] text-silver-400">
                 Name
               </span>
@@ -124,7 +136,7 @@ export function Visit() {
                 placeholder="Your full name"
               />
             </label>
-            <label className="block sm:col-span-1">
+            <label className="block">
               <span className="text-xs uppercase tracking-[0.18em] text-silver-400">
                 Phone
               </span>
@@ -137,21 +149,21 @@ export function Visit() {
             </label>
             <label className="block sm:col-span-2">
               <span className="text-xs uppercase tracking-[0.18em] text-silver-400">
-                Service interest
+                Primary concern
               </span>
               <select
                 name="service"
                 className="mt-2 w-full border-b border-white/20 bg-navy-900 py-3 outline-none transition focus:border-white"
-                defaultValue="Smile Design & Makeovers"
+                defaultValue="Dental checkup & cleaning"
               >
                 {[
-                  "Smile Design & Makeovers",
-                  "Teeth Whitening",
-                  "Dental Checkup",
-                  "Root Canal",
-                  "Implants",
-                  "Braces / Aligners",
-                  "Emergency Care",
+                  "Dental checkup & cleaning",
+                  "Tooth pain / emergency",
+                  "Teeth whitening",
+                  "Smile design / veneers",
+                  "Root canal",
+                  "Dental implant consult",
+                  "Braces / aligners",
                   "Other",
                 ].map((option) => (
                   <option key={option} value={option}>
@@ -162,13 +174,13 @@ export function Visit() {
             </label>
             <label className="block sm:col-span-2">
               <span className="text-xs uppercase tracking-[0.18em] text-silver-400">
-                Message
+                Symptoms or notes
               </span>
               <textarea
                 name="message"
                 rows={4}
                 className="mt-2 w-full resize-none border-b border-white/20 bg-transparent py-3 outline-none transition focus:border-white"
-                placeholder="Tell us briefly what you need"
+                placeholder="e.g. sensitivity on the upper left, cracked filling, interested in whitening"
               />
             </label>
           </div>
@@ -182,11 +194,11 @@ export function Visit() {
 
           {sent && (
             <p className="mt-4 text-sm text-silver-300">
-              Appointment note copied. Complete your booking in Instagram DM.
+              Note copied. Send it via Instagram DM so our team can schedule you.
             </p>
           )}
         </motion.form>
       </div>
-    </section>
+    </Section>
   );
 }

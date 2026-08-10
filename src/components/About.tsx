@@ -3,17 +3,19 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { clinic, team, values } from "@/lib/content";
+import { Section } from "@/components/Section";
 
 export function About() {
   return (
     <>
-      <section className="relative px-5 py-20 md:px-8 md:py-24">
-        <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
+      <Section className="py-20 md:py-24">
+        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}
+            className="max-w-xl"
           >
             <div className="mb-6 flex items-center gap-4">
               <Image
@@ -24,22 +26,22 @@ export function About() {
                 className="h-[72px] w-[72px] rounded-full shadow-soft"
               />
               <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
-                The Practice
+                Our clinical philosophy
               </p>
             </div>
             <h2 className="font-display text-4xl leading-tight text-navy-900 md:text-5xl">
-              Certified dental experts for general & aesthetic dentistry.
+              We practice dentistry the way we would want it for our own family.
             </h2>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-muted md:text-lg">
-              {clinic.name} is a Karachi dental clinic devoted to care that feels
-              composed and personal. From everyday preventive visits to smile
-              transformations, every appointment is shaped around comfort,
-              honesty, and detail.
+            <p className="mt-6 text-base leading-relaxed text-muted md:text-lg">
+              At {clinic.name}, we are dentists first. That means careful
+              diagnosis, sterile protocol, and treatment plans that prioritize
+              tooth preservation. Aesthetic work is never separated from oral
+              health—we design smiles that also chew, speak, and age well.
             </p>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-muted md:text-lg">
-              Our approach is modern without being clinical-cold—polished care
-              with a human center, guided by clinicians who take pride in
-              natural-looking results.
+            <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
+              Patients come to us for cleanings, pain relief, restorative work,
+              and smile refinement. In every case, we explain options, expected
+              outcomes, and aftercare before we begin.
             </p>
           </motion.div>
 
@@ -52,78 +54,90 @@ export function About() {
           >
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
-                src="/images/clinic.jpg"
-                alt="Dental 7 Aesthetics clinic atmosphere"
+                src="/images/care.jpg"
+                alt="Dentist providing attentive clinical care"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 45vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-950/50 via-transparent to-transparent" />
             </div>
-            <div className="absolute -bottom-6 -left-4 max-w-xs bg-navy-900 px-6 py-5 text-silver-100 shadow-glow md:-left-8">
+            <div className="absolute bottom-0 left-0 right-0 bg-navy-900/95 px-6 py-5 text-silver-100 md:bottom-6 md:left-6 md:right-auto md:max-w-sm">
               <p className="font-display text-2xl leading-snug">
-                General & aesthetic dentistry, refined for Karachi.
+                Comfortable dentistry with clear clinical reasoning.
               </p>
             </div>
           </motion.div>
         </div>
-      </section>
+      </Section>
 
-      <section className="px-5 py-20 md:px-8 md:py-24">
-        <div className="mx-auto max-w-7xl">
-          <h3 className="font-display text-3xl text-navy-900 md:text-4xl">What guides us</h3>
-          <div className="mt-10 grid gap-8 md:grid-cols-3">
-            {values.map((value) => (
-              <div key={value.title} className="border-t border-navy-900/15 pt-5">
-                <h4 className="font-display text-2xl text-navy-900">{value.title}</h4>
-                <p className="mt-3 text-sm leading-relaxed text-muted">{value.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="px-5 pb-24 md:px-8 md:pb-28">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid items-end gap-8 md:grid-cols-[1fr_1fr]">
-            <div>
-              <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
-                The Clinicians
-              </p>
-              <h3 className="font-display mt-4 text-4xl text-navy-900 md:text-5xl">
-                Guided by certified dental experts.
-              </h3>
+      <Section className="pb-8 md:pb-10">
+        <div className="grid gap-4 md:grid-cols-3">
+          {[
+            { src: "/images/hygiene.jpg", alt: "Preventive dental hygiene" },
+            { src: "/images/treatment.jpg", alt: "Restorative dental treatment" },
+            { src: "/images/atmosphere-smile.png", alt: "Refined aesthetic result" },
+          ].map((img) => (
+            <div key={img.src} className="relative aspect-[4/3] overflow-hidden">
+              <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="33vw" />
             </div>
-            <p className="max-w-md text-muted md:justify-self-end">
-              A focused team for general and aesthetic dentistry—attentive,
-              precise, and present for every patient journey.
-            </p>
-          </div>
-
-          <div className="mt-14 grid gap-6 sm:grid-cols-2">
-            {team.map((member, index) => (
-              <motion.article
-                key={member.name}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.08, duration: 0.6 }}
-                className="border border-navy-900/10 bg-white/60 p-7 backdrop-blur-sm"
-              >
-                <p className="text-[11px] uppercase tracking-[0.2em] text-silver-500">
-                  {member.role}
-                </p>
-                <h4 className="font-display mt-3 text-2xl text-navy-900">
-                  {member.name}
-                </h4>
-                <p className="mt-3 text-sm leading-relaxed text-muted">
-                  {member.focus}
-                </p>
-              </motion.article>
-            ))}
-          </div>
+          ))}
         </div>
-      </section>
+      </Section>
+
+      <Section className="py-20 md:py-24">
+        <h3 className="font-display text-3xl text-navy-900 md:text-4xl">
+          Standards that guide our chairside decisions
+        </h3>
+        <div className="mt-10 grid gap-8 md:grid-cols-3 md:gap-10">
+          {values.map((value) => (
+            <div key={value.title} className="border-t border-navy-900/15 pt-5">
+              <h4 className="font-display text-2xl text-navy-900">{value.title}</h4>
+              <p className="mt-3 text-sm leading-relaxed text-muted">{value.text}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section className="pb-24 md:pb-28">
+        <div className="grid items-end gap-6 md:grid-cols-2 md:gap-10">
+          <div>
+            <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
+              Our dentists
+            </p>
+            <h3 className="font-display mt-4 text-4xl text-navy-900 md:text-5xl">
+              Clinicians responsible for your care.
+            </h3>
+          </div>
+          <p className="max-w-md text-muted md:justify-self-end md:text-right">
+            You will always know who is treating you and why a procedure is
+            recommended.
+          </p>
+        </div>
+
+        <div className="mt-14 grid gap-6 sm:grid-cols-2">
+          {team.map((member, index) => (
+            <motion.article
+              key={member.name}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.08, duration: 0.6 }}
+              className="border border-navy-900/10 bg-white/70 p-7 md:p-8"
+            >
+              <p className="text-[11px] uppercase tracking-[0.2em] text-silver-500">
+                {member.role}
+              </p>
+              <h4 className="font-display mt-3 text-2xl text-navy-900">
+                {member.name}
+              </h4>
+              <p className="mt-3 text-sm leading-relaxed text-muted">
+                {member.focus}
+              </p>
+            </motion.article>
+          ))}
+        </div>
+      </Section>
     </>
   );
 }

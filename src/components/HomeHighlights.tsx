@@ -3,18 +3,20 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { clinic, values } from "@/lib/content";
+import { clinic, homeMoments, pageCopy, values } from "@/lib/content";
+import { Section } from "@/components/Section";
 
 export function HomeHighlights() {
   return (
     <>
-      <section className="px-5 py-24 md:px-8 md:py-28">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
+      <Section className="py-24 md:py-28">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7 }}
+            className="max-w-xl"
           >
             <div className="mb-6 flex items-center gap-4">
               <Image
@@ -25,29 +27,30 @@ export function HomeHighlights() {
                 className="h-16 w-16 rounded-full"
               />
               <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
-                Welcome
+                From your dentists
               </p>
             </div>
-            <h2 className="font-display text-4xl text-navy-900 md:text-5xl">
-              A dentistry brand built on composure and beautiful results.
+            <h2 className="font-display text-4xl leading-tight text-navy-900 md:text-5xl">
+              {pageCopy.home.headline}
             </h2>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted md:text-lg">
-              From everyday preventive care to smile transformations,{" "}
-              {clinic.name} delivers general and aesthetic dentistry with
-              clarity, comfort, and detail.
+            <p className="mt-5 text-base leading-relaxed text-muted md:text-lg">
+              At {clinic.name}, every appointment begins with listening and a
+              proper examination. We explain findings in plain language, then
+              recommend treatment that protects your teeth for the long term—
+              while refining aesthetics with restraint.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/about/"
                 className="rounded-sm bg-navy-900 px-6 py-3 text-sm text-white transition hover:bg-navy-800"
               >
-                About Us
+                Meet Our Dentists
               </Link>
               <Link
                 href="/services/"
                 className="rounded-sm border border-navy-900/20 px-6 py-3 text-sm text-navy-900 transition hover:bg-white"
               >
-                Our Services
+                View Treatments
               </Link>
             </div>
           </motion.div>
@@ -60,18 +63,26 @@ export function HomeHighlights() {
             className="relative aspect-[5/4] overflow-hidden"
           >
             <Image
-              src="/images/care.jpg"
-              alt="Thoughtful dental care"
+              src="/images/atmosphere-clinic.png"
+              alt="Composed dental suite at Dental 7 Aesthetics"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </motion.div>
         </div>
-      </section>
+      </Section>
 
-      <section className="px-5 pb-24 md:px-8 md:pb-28">
-        <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-3">
+      <Section className="pb-20 md:pb-24">
+        <div className="mb-10 max-w-2xl">
+          <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
+            How we practice
+          </p>
+          <h3 className="font-display mt-3 text-3xl text-navy-900 md:text-4xl">
+            Clinical principles we follow in every chair.
+          </h3>
+        </div>
+        <div className="grid gap-8 md:grid-cols-3 md:gap-10">
           {values.map((value, index) => (
             <motion.article
               key={value.title}
@@ -86,7 +97,45 @@ export function HomeHighlights() {
             </motion.article>
           ))}
         </div>
-      </section>
+      </Section>
+
+      <Section className="pb-24 md:pb-28">
+        <div className="mb-10 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-xl">
+            <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
+              Patient journeys
+            </p>
+            <h3 className="font-display mt-3 text-3xl text-navy-900 md:text-4xl">
+              Care pathways we guide every week.
+            </h3>
+          </div>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {homeMoments.map((moment, index) => (
+            <motion.figure
+              key={moment.src}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.06, duration: 0.5 }}
+              className="flex h-full flex-col"
+            >
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <Image
+                  src={moment.src}
+                  alt={moment.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                />
+              </div>
+              <figcaption className="mt-4 text-sm leading-relaxed text-muted">
+                {moment.caption}
+              </figcaption>
+            </motion.figure>
+          ))}
+        </div>
+      </Section>
     </>
   );
 }

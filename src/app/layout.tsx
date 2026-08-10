@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | Dental 7 Aesthetics",
   },
   description:
-    "Dental 7 Aesthetics is a Karachi dental clinic offering general and aesthetic dentistry—whitening, veneers, implants, orthodontics, root canals, and complete smile care near Malir Cantt.",
+    "Dentist-led general and aesthetic dentistry in Karachi—checkups, whitening, veneers, implants, orthodontics, root canals, and emergency care near Malir Cantt.",
   keywords: [
     "Dental 7 Aesthetics",
     "dentist Karachi",

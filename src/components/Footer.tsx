@@ -30,7 +30,7 @@ export function Footer() {
             </div>
           </div>
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-silver-400">
-            {clinic.tagline}. Follow our work and book consultations through Instagram.
+            {clinic.tagline} Book consultations through Instagram.
           </p>
         </div>
 
