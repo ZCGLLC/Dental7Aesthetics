@@ -17,12 +17,19 @@ type Status = "idle" | "sending" | "success" | "error";
 
 const web3formsKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "";
 
+const fallbackSuccessUrl =
+  "https://zcgllc.github.io/Dental7Aesthetics/book/?sent=1";
+
 function bookingSuccessUrl() {
-  if (typeof window === "undefined") return "";
-  const url = new URL(window.location.href);
-  url.searchParams.set("sent", "1");
-  url.hash = "";
-  return url.toString();
+  if (typeof window === "undefined") return fallbackSuccessUrl;
+  try {
+    const url = new URL(window.location.href);
+    url.searchParams.set("sent", "1");
+    url.hash = "";
+    return url.toString();
+  } catch {
+    return fallbackSuccessUrl;
+  }
 }
 
 export function BookingForm() {
@@ -33,7 +40,7 @@ export function BookingForm() {
   const [selectedTime, setSelectedTime] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState("");
-  const [successUrl, setSuccessUrl] = useState("");
+  const [successUrl, setSuccessUrl] = useState(fallbackSuccessUrl);
 
   useEffect(() => {
     setSuccessUrl(bookingSuccessUrl());
