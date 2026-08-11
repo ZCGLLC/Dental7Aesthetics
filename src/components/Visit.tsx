@@ -39,12 +39,32 @@ export function Visit() {
 
           <div className="relative mt-10 aspect-[16/10] overflow-hidden">
             <Image
-              src="/images/reception.jpg"
+              src="/images/slide-04-reception.png"
               alt="Clinic reception ready for patient visits"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
+          </div>
+          <div className="mt-4 grid grid-cols-2 gap-4">
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image
+                src="/images/banner-visit.png"
+                alt="Dental clinic entrance"
+                fill
+                className="object-cover"
+                sizes="25vw"
+              />
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image
+                src="/images/slide-01-operatory.png"
+                alt="Treatment suite prepared for care"
+                fill
+                className="object-cover"
+                sizes="25vw"
+              />
+            </div>
           </div>
         </motion.div>
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PageBanner } from "@/components/PageBanner";
 import { Services } from "@/components/Services";
-import { pageCopy } from "@/lib/content";
+import { pageBanners, pageCopy } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -16,8 +16,8 @@ export default function ServicesPage() {
         eyebrow={pageCopy.services.eyebrow}
         title={pageCopy.services.title}
         subtitle={pageCopy.services.subtitle}
-        image="/images/treatment.jpg"
-        imageAlt="Dentist performing precise clinical treatment"
+        image={pageBanners.services.image}
+        imageAlt={pageBanners.services.imageAlt}
       />
       <Services />
     </>

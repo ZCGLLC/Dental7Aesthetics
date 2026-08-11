@@ -8,47 +8,48 @@ import { clinic, gallery, pageCopy } from "@/lib/content";
 
 export function Hero() {
   const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
+      setDirection(1);
       setIndex((current) => (current + 1) % gallery.length);
-    }, 5200);
+    }, 5500);
     return () => window.clearInterval(timer);
   }, []);
+
+  const goTo = (next: number) => {
+    setDirection(next > index || (index === gallery.length - 1 && next === 0) ? 1 : -1);
+    setIndex(next);
+  };
 
   const active = gallery[index];
 
   return (
     <section className="relative min-h-[100svh] overflow-hidden text-white">
-      <AnimatePresence mode="sync">
+      <AnimatePresence mode="sync" custom={direction} initial={false}>
         <motion.div
           key={active.src}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.2, ease: "easeInOut" }}
+          custom={direction}
+          initial={{ opacity: 0, x: direction > 0 ? "8%" : "-8%", scale: 1.04 }}
+          animate={{ opacity: 1, x: "0%", scale: 1.08 }}
+          exit={{ opacity: 0, x: direction > 0 ? "-6%" : "6%", scale: 1.02 }}
+          transition={{ duration: 1.15, ease: [0.22, 1, 0.36, 1] }}
           className="absolute inset-0"
         >
-          <motion.div
-            initial={{ scale: 1.06 }}
-            animate={{ scale: 1.14 }}
-            transition={{ duration: 6.2, ease: "linear" }}
-            className="absolute inset-0"
-          >
-            <Image
-              src={active.src}
-              alt={active.alt}
-              fill
-              priority={index === 0}
-              className="object-cover object-center"
-              sizes="100vw"
-            />
-          </motion.div>
+          <Image
+            src={active.src}
+            alt={active.alt}
+            fill
+            priority={index === 0}
+            className="object-cover object-center"
+            sizes="100vw"
+          />
         </motion.div>
       </AnimatePresence>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-navy-950/75 via-navy-900/68 to-navy-950/92" />
-      <div className="texture-grid absolute inset-0 opacity-30" />
+      <div className="absolute inset-0 bg-gradient-to-b from-navy-950/72 via-navy-900/62 to-navy-950/90" />
+      <div className="texture-grid absolute inset-0 opacity-25" />
       <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-pearl to-transparent" />
 
       <div className="relative mx-auto flex min-h-[100svh] w-full max-w-7xl flex-col justify-end px-5 pb-24 pt-32 md:justify-center md:px-8 md:pb-24 md:pt-28">
@@ -105,7 +106,7 @@ export function Hero() {
                 key={item.src}
                 type="button"
                 aria-label={`Show image ${i + 1}`}
-                onClick={() => setIndex(i)}
+                onClick={() => goTo(i)}
                 className={`h-1.5 rounded-full transition-all ${
                   i === index ? "w-8 bg-white" : "w-3 bg-white/35 hover:bg-white/60"
                 }`}

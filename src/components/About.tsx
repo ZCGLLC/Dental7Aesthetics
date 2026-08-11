@@ -5,6 +5,12 @@ import { motion } from "framer-motion";
 import { clinic, team, values } from "@/lib/content";
 import { Section } from "@/components/Section";
 
+const aboutGallery = [
+  { src: "/images/svc-hygiene.png", alt: "Preventive dental hygiene" },
+  { src: "/images/svc-restorative.png", alt: "Restorative dental treatment" },
+  { src: "/images/svc-smile-design.png", alt: "Refined aesthetic result" },
+];
+
 export function About() {
   return (
     <>
@@ -54,7 +60,7 @@ export function About() {
           >
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
-                src="/images/care.jpg"
+                src="/images/slide-03-exam.png"
                 alt="Dentist providing attentive clinical care"
                 fill
                 className="object-cover"
@@ -73,11 +79,7 @@ export function About() {
 
       <Section className="pb-8 md:pb-10">
         <div className="grid gap-4 md:grid-cols-3">
-          {[
-            { src: "/images/hygiene.jpg", alt: "Preventive dental hygiene" },
-            { src: "/images/treatment.jpg", alt: "Restorative dental treatment" },
-            { src: "/images/atmosphere-smile.png", alt: "Refined aesthetic result" },
-          ].map((img) => (
+          {aboutGallery.map((img) => (
             <div key={img.src} className="relative aspect-[4/3] overflow-hidden">
               <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="33vw" />
             </div>
@@ -115,7 +117,7 @@ export function About() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2">
+        <div className="mt-14 grid gap-8 sm:grid-cols-2">
           {team.map((member, index) => (
             <motion.article
               key={member.name}
@@ -123,17 +125,28 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08, duration: 0.6 }}
-              className="border border-navy-900/10 bg-white/70 p-7 md:p-8"
+              className="overflow-hidden border border-navy-900/10 bg-white/70"
             >
-              <p className="text-[11px] uppercase tracking-[0.2em] text-silver-500">
-                {member.role}
-              </p>
-              <h4 className="font-display mt-3 text-2xl text-navy-900">
-                {member.name}
-              </h4>
-              <p className="mt-3 text-sm leading-relaxed text-muted">
-                {member.focus}
-              </p>
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                />
+              </div>
+              <div className="p-7 md:p-8">
+                <p className="text-[11px] uppercase tracking-[0.2em] text-silver-500">
+                  {member.role}
+                </p>
+                <h4 className="font-display mt-3 text-2xl text-navy-900">
+                  {member.name}
+                </h4>
+                <p className="mt-3 text-sm leading-relaxed text-muted">
+                  {member.focus}
+                </p>
+              </div>
             </motion.article>
           ))}
         </div>

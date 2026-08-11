@@ -4,6 +4,7 @@ import { PageBanner } from "@/components/PageBanner";
 import { BookingForm } from "@/components/BookingForm";
 import { Section } from "@/components/Section";
 import { bookingEmail } from "@/lib/booking";
+import { pageBanners } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Book Appointment",
@@ -18,8 +19,8 @@ export default function BookPage() {
         eyebrow="Appointments"
         title="Book your dental appointment online."
         subtitle="Select an available date and time, then share your details. Your request is sent directly to our clinic inbox."
-        image="/images/reception.jpg"
-        imageAlt="Dental clinic ready for patient appointments"
+        image={pageBanners.book.image}
+        imageAlt={pageBanners.book.imageAlt}
       />
 
       <Section className="py-16 md:py-24">
@@ -47,7 +48,7 @@ export default function BookPage() {
           </div>
           <div className="relative aspect-[16/10] overflow-hidden md:justify-self-end md:w-full md:max-w-md">
             <Image
-              src="/images/consult.jpg"
+              src="/images/slide-03-exam.png"
               alt="Dental consultation appointment"
               fill
               className="object-cover"

@@ -14,59 +14,48 @@ export const clinic = {
   ],
 };
 
+/** Five HD slides for the home hero background slideshow */
 export const gallery = [
   {
-    src: "/images/hero.jpg",
-    alt: "Our modern dental operatory prepared for precise treatment",
+    src: "/images/slide-01-operatory.png",
+    alt: "Modern dental operatory prepared for precise treatment",
   },
   {
-    src: "/images/atmosphere-clinic.png",
-    alt: "Calm, composed treatment suite at Dental 7 Aesthetics",
-  },
-  {
-    src: "/images/smile.jpg",
-    alt: "Healthy smile following aesthetic dental care",
-  },
-  {
-    src: "/images/atmosphere-smile.png",
+    src: "/images/slide-02-smile.png",
     alt: "Naturally refined smile designed with aesthetic dentistry",
   },
   {
-    src: "/images/clinic.jpg",
-    alt: "Sterile clinical environment for patient-safe dentistry",
+    src: "/images/slide-03-exam.png",
+    alt: "Dentist delivering careful clinical examination",
   },
   {
-    src: "/images/treatment.jpg",
-    alt: "Dentist delivering careful restorative treatment",
+    src: "/images/slide-04-reception.png",
+    alt: "Welcoming reception lounge at Dental 7 Aesthetics",
   },
   {
-    src: "/images/hygiene.jpg",
-    alt: "Professional dental hygiene and preventive care",
-  },
-  {
-    src: "/images/consult.jpg",
-    alt: "Chairside consultation and diagnosis",
+    src: "/images/slide-05-instruments.png",
+    alt: "Sterile instruments prepared for patient-safe dentistry",
   },
 ];
 
 export const homeMoments = [
   {
-    src: "/images/reception.jpg",
+    src: "/images/slide-04-reception.png",
     alt: "Welcoming clinic reception for a calm first visit",
     caption: "Your first visit starts with a clear exam and honest plan.",
   },
   {
-    src: "/images/ortho.jpg",
+    src: "/images/svc-ortho.png",
     alt: "Orthodontic assessment for aligned bites",
     caption: "We evaluate bite, alignment, and long-term enamel health together.",
   },
   {
-    src: "/images/implant.jpg",
+    src: "/images/svc-implants.png",
     alt: "Implant consultation and restorative planning",
     caption: "Missing teeth are restored for function first, aesthetics always.",
   },
   {
-    src: "/images/family.jpg",
+    src: "/images/svc-pediatric.png",
     alt: "Family-focused dental care setting",
     caption: "From children to adults, we tailor care to every stage of life.",
   },
@@ -78,12 +67,14 @@ export const team = [
     role: "Founder, Dentist & CEO",
     focus:
       "I lead treatment planning across general and aesthetic dentistry—balancing comfort, longevity, and natural-looking results.",
+    image: "/images/team-dentist-male.png",
   },
   {
     name: "Dr. Maira Minhaj",
     role: "General Dentist",
     focus:
       "I focus on preventive care, restorative dentistry, and smile treatments with a calm chairside manner for every patient.",
+    image: "/images/team-dentist-female.png",
   },
 ];
 
@@ -100,140 +91,140 @@ export const services: Service[] = [
     description:
       "We map facial proportions, tooth shade, and bite before reshaping your smile—so the result looks natural in conversation and on photographs.",
     category: "Cosmetic",
-    image: "/images/atmosphere-smile.png",
+    image: "/images/svc-smile-design.png",
   },
   {
     title: "Teeth Whitening",
     description:
       "In-clinic whitening brightens enamel safely under our supervision. We protect gums, select the right concentration, and set realistic shade goals.",
     category: "Cosmetic",
-    image: "/images/whitening.jpg",
+    image: "/images/svc-whitening.png",
   },
   {
     title: "Porcelain Veneers",
     description:
       "Ultra-thin ceramic veneers correct shape, color, and minor alignment issues while preserving as much healthy tooth structure as possible.",
     category: "Cosmetic",
-    image: "/images/smile.jpg",
+    image: "/images/svc-veneers.png",
   },
   {
     title: "Cosmetic Bonding",
     description:
       "We repair chips, close small gaps, and refine edges with tooth-colored composite—often completed in a single comfortable visit.",
     category: "Cosmetic",
-    image: "/images/tools.jpg",
+    image: "/images/svc-bonding.png",
   },
   {
     title: "Dental Checkups & Exams",
     description:
       "Every checkup includes a full oral examination, gum assessment, and discussion of findings so you understand your oral health clearly.",
     category: "General",
-    image: "/images/consult.jpg",
+    image: "/images/svc-checkup.png",
   },
   {
     title: "Scaling & Polishing",
     description:
       "We remove plaque and calculus above and below the gumline, then polish enamel to reduce stain and support healthier gums.",
     category: "General",
-    image: "/images/hygiene.jpg",
+    image: "/images/svc-hygiene.png",
   },
   {
     title: "Preventive Care",
     description:
       "Fluoride, hygiene coaching, and recall intervals are personalized to your risk level—because prevention is the foundation of lasting dentistry.",
     category: "General",
-    image: "/images/care.jpg",
+    image: "/images/slide-03-exam.png",
   },
   {
     title: "Pediatric Dentistry",
     description:
       "Children receive gentle exams, cleanings, and early guidance in a calm setting so dental visits feel safe from the start.",
     category: "General",
-    image: "/images/family.jpg",
+    image: "/images/svc-pediatric.png",
   },
   {
     title: "Tooth-Colored Fillings",
     description:
       "We treat decay with bonded composite restorations that match your enamel and conserve healthy tooth structure.",
     category: "Restorative",
-    image: "/images/treatment.jpg",
+    image: "/images/svc-bonding.png",
   },
   {
     title: "Root Canal Therapy",
     description:
       "When pulp infection causes pain, we clean and seal the canals carefully to relieve discomfort and save your natural tooth whenever possible.",
     category: "Restorative",
-    image: "/images/xray.jpg",
+    image: "/images/svc-rootcanal.png",
   },
   {
     title: "Crowns & Bridges",
     description:
       "Custom crowns and bridges restore strength after fracture or large fillings, rebuilding bite function with refined aesthetics.",
     category: "Restorative",
-    image: "/images/implant.jpg",
+    image: "/images/svc-restorative.png",
   },
   {
     title: "Dentures & Partials",
     description:
       "Removable prostheses are fitted for speech, chewing comfort, and a natural appearance—adjusted carefully for daily wear.",
     category: "Restorative",
-    image: "/images/reception.jpg",
+    image: "/images/svc-implants.png",
   },
   {
     title: "Dental Implants",
     description:
       "Implants replace missing teeth with a stable foundation for crowns or bridges that look and function like natural teeth.",
     category: "Specialty",
-    image: "/images/implant.jpg",
+    image: "/images/svc-implants.png",
   },
   {
     title: "Orthodontics & Aligners",
     description:
       "We correct crowding and bite issues with braces or clear aligners, planning tooth movement for both aesthetics and long-term stability.",
     category: "Specialty",
-    image: "/images/ortho.jpg",
+    image: "/images/svc-ortho.png",
   },
   {
     title: "Gum Therapy",
     description:
       "Periodontal treatment reduces inflammation, deep cleans infected pockets, and helps stabilize gums that support your teeth.",
     category: "Specialty",
-    image: "/images/hygiene.jpg",
+    image: "/images/svc-gum.png",
   },
   {
     title: "Wisdom Tooth Care",
     description:
       "Impacted or symptomatic third molars are assessed with imaging and removed carefully when they threaten pain, crowding, or infection.",
     category: "Specialty",
-    image: "/images/xray.jpg",
+    image: "/images/svc-rootcanal.png",
   },
   {
     title: "Oral Surgery Support",
     description:
       "Extractions and minor surgical care are performed with clear consent, sterile protocol, and aftercare instructions you can follow at home.",
     category: "Specialty",
-    image: "/images/treatment.jpg",
+    image: "/images/slide-01-operatory.png",
   },
   {
     title: "Emergency Dental Care",
     description:
       "Toothache, trauma, swelling, or a broken restoration needs prompt attention—we stabilize the problem and explain the next clinical steps.",
     category: "Specialty",
-    image: "/images/clinic.jpg",
+    image: "/images/svc-emergency.png",
   },
   {
     title: "Night Guards & Bite Care",
     description:
       "Custom night guards protect enamel from grinding and help ease jaw strain linked to clenching during sleep.",
     category: "Specialty",
-    image: "/images/tools.jpg",
+    image: "/images/svc-nightguard.png",
   },
   {
     title: "Full Mouth Rehabilitation",
     description:
       "For extensive wear or multiple missing teeth, we rebuild function step by step—restoring bite, comfort, and a cohesive smile.",
     category: "Restorative",
-    image: "/images/atmosphere-clinic.png",
+    image: "/images/svc-smile-design.png",
   },
 ];
 
@@ -275,5 +266,24 @@ export const pageCopy = {
     title: "Book a consultation and begin with a proper dental assessment.",
     subtitle:
       "Visit us on Jinnah Avenue, opposite Malir Cantt. Share your concern and we will guide the right next clinical step.",
+  },
+};
+
+export const pageBanners = {
+  services: {
+    image: "/images/banner-services.png",
+    imageAlt: "Modern dental clinic treatment corridor",
+  },
+  about: {
+    image: "/images/banner-about.png",
+    imageAlt: "Dentists collaborating on patient care",
+  },
+  visit: {
+    image: "/images/banner-visit.png",
+    imageAlt: "Welcoming dental clinic entrance",
+  },
+  book: {
+    image: "/images/banner-book.png",
+    imageAlt: "Clinic desk ready for appointment booking",
   },
 };

@@ -63,7 +63,7 @@ export function HomeHighlights() {
             className="relative aspect-[5/4] overflow-hidden"
           >
             <Image
-              src="/images/atmosphere-clinic.png"
+              src="/images/slide-01-operatory.png"
               alt="Composed dental suite at Dental 7 Aesthetics"
               fill
               className="object-cover"
