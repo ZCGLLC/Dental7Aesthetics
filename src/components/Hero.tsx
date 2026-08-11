@@ -81,10 +81,10 @@ export function Hero() {
 
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <Link
-              href="/visit/"
+              href="/book/"
               className="rounded-sm bg-white px-7 py-3.5 text-sm font-medium tracking-wide text-navy-900 transition hover:bg-silver-200"
             >
-              Book a Consultation
+              Book Appointment
             </Link>
             <Link
               href="/services/"

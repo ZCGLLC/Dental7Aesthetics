@@ -41,10 +41,10 @@ export function HomeHighlights() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="/about/"
+                href="/book/"
                 className="rounded-sm bg-navy-900 px-6 py-3 text-sm text-white transition hover:bg-navy-800"
               >
-                Meet Our Dentists
+                Book Appointment
               </Link>
               <Link
                 href="/services/"

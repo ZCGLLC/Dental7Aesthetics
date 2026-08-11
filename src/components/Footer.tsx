@@ -7,6 +7,7 @@ const links = [
   { href: "/services/", label: "Services" },
   { href: "/about/", label: "About Us" },
   { href: "/visit/", label: "Visit" },
+  { href: "/book/", label: "Book Appointment" },
 ];
 
 export function Footer() {

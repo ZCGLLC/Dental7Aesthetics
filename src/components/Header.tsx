@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { clinic } from "@/lib/content";
 
 const links = [
   { href: "/", label: "Home" },
@@ -78,14 +77,12 @@ export function Header() {
               </Link>
             );
           })}
-          <a
-            href={clinic.instagram}
-            target="_blank"
-            rel="noreferrer"
+          <Link
+            href="/book/"
             className="rounded-sm border border-white/25 bg-white/10 px-5 py-2.5 text-sm text-white transition hover:bg-white hover:text-navy-900"
           >
-            Book via Instagram
-          </a>
+            Book Appointment
+          </Link>
         </nav>
 
         <button
@@ -115,14 +112,12 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href={clinic.instagram}
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              href="/book/"
               className="rounded-sm bg-white px-5 py-3 text-center text-sm text-navy-900"
             >
-              Book via Instagram
-            </a>
+              Book Appointment
+            </Link>
           </div>
         </div>
       )}

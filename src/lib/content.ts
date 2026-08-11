@@ -6,6 +6,7 @@ export const clinic = {
   city: "Karachi, Pakistan",
   instagram: "https://www.instagram.com/dental7aesthetics/",
   instagramHandle: "@dental7aesthetics",
+  email: "dental7aesthetics@gmail.com",
   linkedin: "https://www.linkedin.com/company/dental-7-aesthetics",
   hours: [
     { day: "Monday – Saturday", time: "11:00 AM – 9:00 PM" },

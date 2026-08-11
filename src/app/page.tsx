@@ -23,10 +23,10 @@ export default function HomePage() {
           </div>
           <div className="flex flex-wrap gap-3">
             <Link
-              href="/visit/"
+              href="/book/"
               className="rounded-sm bg-white px-6 py-3 text-sm text-navy-900 transition hover:bg-silver-200"
             >
-              Visit Us
+              Book Appointment
             </Link>
             <Link
               href="/services/"
