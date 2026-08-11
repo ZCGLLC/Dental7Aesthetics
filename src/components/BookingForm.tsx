@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useEffect, useMemo, useState } from "react";
 import {
   bookingEmail,
   formatDateLabel,
@@ -15,6 +15,16 @@ import {
 
 type Status = "idle" | "sending" | "success" | "error";
 
+const web3formsKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "";
+
+function bookingSuccessUrl() {
+  if (typeof window === "undefined") return "";
+  const url = new URL(window.location.href);
+  url.searchParams.set("sent", "1");
+  url.hash = "";
+  return url.toString();
+}
+
 export function BookingForm() {
   const today = useMemo(() => startOfDay(new Date()), []);
   const [viewYear, setViewYear] = useState(today.getFullYear());
@@ -23,6 +33,15 @@ export function BookingForm() {
   const [selectedTime, setSelectedTime] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [successUrl, setSuccessUrl] = useState("");
+
+  useEffect(() => {
+    setSuccessUrl(bookingSuccessUrl());
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("sent") === "1") {
+      setStatus("success");
+    }
+  }, []);
 
   const cells = useMemo(
     () => getMonthMatrix(viewYear, viewMonth),
@@ -35,61 +54,69 @@ export function BookingForm() {
     setViewMonth(next.getMonth());
   }
 
+  async function submitWithWeb3Forms(form: HTMLFormElement) {
+    const data = new FormData(form);
+    const firstName = String(data.get("First Name") || "").trim();
+    const lastName = String(data.get("Last Name") || "").trim();
+    const email = String(data.get("email") || "").trim();
+    const phone = String(data.get("Phone Number") || "").trim();
+    const comments = String(data.get("Comments") || "").trim();
+    const appointmentDate = selectedDate ? formatDateLabel(selectedDate) : "";
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: web3formsKey,
+        subject: `New Appointment — ${firstName} ${lastName} — ${appointmentDate} ${selectedTime}`,
+        from_name: "Dental 7 Aesthetics Booking",
+        email,
+        "First Name": firstName,
+        "Last Name": lastName,
+        "Phone Number": phone,
+        "Appointment Date": appointmentDate,
+        "Appointment Time": selectedTime,
+        Comments: comments || "—",
+      }),
+    });
+
+    const result = (await response.json()) as { success?: boolean; message?: string };
+    if (!response.ok || !result.success) {
+      throw new Error(result.message || "Unable to send appointment request.");
+    }
+  }
+
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
     setErrorMessage("");
 
     if (!selectedDate || !selectedTime) {
+      event.preventDefault();
       setStatus("error");
       setErrorMessage("Please select a date and time for your appointment.");
       return;
     }
 
-    const form = new FormData(event.currentTarget);
-    const firstName = String(form.get("firstName") || "").trim();
-    const lastName = String(form.get("lastName") || "").trim();
-    const email = String(form.get("email") || "").trim();
-    const phone = String(form.get("phone") || "").trim();
-    const comments = String(form.get("comments") || "").trim();
+    // Prefer Web3Forms when configured; otherwise native FormSubmit POST.
+    if (!web3formsKey) {
+      setStatus("sending");
+      return;
+    }
 
+    event.preventDefault();
     setStatus("sending");
 
-    const appointmentDate = formatDateLabel(selectedDate);
-    const payload = {
-      _subject: `New Appointment — ${firstName} ${lastName} — ${appointmentDate} ${selectedTime}`,
-      _template: "table",
-      _captcha: "false",
-      "First Name": firstName,
-      "Last Name": lastName,
-      Email: email,
-      "Phone Number": phone,
-      "Appointment Date": appointmentDate,
-      "Appointment Time": selectedTime,
-      Comments: comments || "—",
-      _replyto: email,
-    };
-
     try {
-      const response = await fetch(
-        `https://formsubmit.co/ajax/${bookingEmail}`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify(payload),
-        },
-      );
-
-      if (!response.ok) {
-        throw new Error("Unable to send appointment request.");
-      }
-
+      await submitWithWeb3Forms(event.currentTarget);
       setStatus("success");
       event.currentTarget.reset();
       setSelectedDate(null);
       setSelectedTime("");
+      const url = new URL(window.location.href);
+      url.searchParams.set("sent", "1");
+      window.history.replaceState({}, "", url.toString());
     } catch {
       setStatus("error");
       setErrorMessage(
@@ -98,8 +125,26 @@ export function BookingForm() {
     }
   }
 
+  const appointmentDate = selectedDate ? formatDateLabel(selectedDate) : "";
+  const subject = selectedDate
+    ? `New Appointment — ${appointmentDate} ${selectedTime}`
+    : "New Appointment Request — Dental 7 Aesthetics";
+
   return (
-    <form onSubmit={onSubmit} className="grid gap-10 lg:grid-cols-2 lg:gap-14">
+    <form
+      action={`https://formsubmit.co/${bookingEmail}`}
+      method="POST"
+      onSubmit={onSubmit}
+      className="grid gap-10 lg:grid-cols-2 lg:gap-14"
+    >
+      <input type="hidden" name="_subject" value={subject} />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value={successUrl} />
+      <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
+      <input type="hidden" name="Appointment Date" value={appointmentDate} />
+      <input type="hidden" name="Appointment Time" value={selectedTime} />
+
       <div>
         <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
           Select date
@@ -224,7 +269,7 @@ export function BookingForm() {
             </span>
             <input
               required
-              name="firstName"
+              name="First Name"
               autoComplete="given-name"
               className="mt-2 w-full border-b border-white/20 bg-transparent py-3 outline-none transition focus:border-white"
               placeholder="First name"
@@ -236,7 +281,7 @@ export function BookingForm() {
             </span>
             <input
               required
-              name="lastName"
+              name="Last Name"
               autoComplete="family-name"
               className="mt-2 w-full border-b border-white/20 bg-transparent py-3 outline-none transition focus:border-white"
               placeholder="Last name"
@@ -262,7 +307,7 @@ export function BookingForm() {
             <input
               required
               type="tel"
-              name="phone"
+              name="Phone Number"
               autoComplete="tel"
               className="mt-2 w-full border-b border-white/20 bg-transparent py-3 outline-none transition focus:border-white"
               placeholder="+92 ..."
@@ -273,7 +318,7 @@ export function BookingForm() {
               Comments
             </span>
             <textarea
-              name="comments"
+              name="Comments"
               rows={4}
               className="mt-2 w-full resize-none border-b border-white/20 bg-transparent py-3 outline-none transition focus:border-white"
               placeholder="Share symptoms, preferred dentist, or anything we should know"
