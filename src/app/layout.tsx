@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Jost } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { asset } from "@/lib/paths";
 import "./globals.css";
 
 const display = Cormorant_Garamond({
@@ -37,13 +38,13 @@ export const metadata: Metadata = {
       "Certified dental experts in general & aesthetic dentistry. Jinnah Avenue, opposite Malir Cantt, Karachi.",
     url: "https://dental7aesthetics.com",
     siteName: "Dental 7 Aesthetics",
-    images: [{ url: "/brand/logo-512.png", width: 512, height: 512 }],
+    images: [{ url: asset("/brand/logo-512.png"), width: 512, height: 512 }],
     locale: "en_PK",
     type: "website",
   },
   icons: {
-    icon: "/brand/logo-512.png",
-    apple: "/brand/logo-512.png",
+    icon: asset("/brand/logo-512.png"),
+    apple: asset("/brand/logo-512.png"),
   },
 };
 

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { SiteImage as Image } from "@/components/SiteImage";
 import { motion } from "framer-motion";
 import { gallery } from "@/lib/content";
 

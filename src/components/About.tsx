@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { SiteImage as Image } from "@/components/SiteImage";
 import { motion } from "framer-motion";
 import { clinic, team, values } from "@/lib/content";
 import { Section } from "@/components/Section";

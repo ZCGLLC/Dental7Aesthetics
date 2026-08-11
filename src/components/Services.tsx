@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { SiteImage as Image } from "@/components/SiteImage";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { services, type Service } from "@/lib/content";

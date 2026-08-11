@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { SiteImage as Image } from "@/components/SiteImage";
 import { PageBanner } from "@/components/PageBanner";
 import { BookingForm } from "@/components/BookingForm";
 import { Section } from "@/components/Section";
