@@ -3,7 +3,7 @@
 import { SiteImage as Image } from "@/components/SiteImage";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { clinic } from "@/lib/content";
+import { clinic, visitFeaturedImage } from "@/lib/content";
 import { Section } from "@/components/Section";
 
 export function Visit() {
@@ -16,55 +16,26 @@ export function Visit() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <div className="mb-6 flex items-center gap-4">
-            <Image
-              src="/brand/logo-512.png"
-              alt="Dental 7 Aesthetics logo"
-              width={64}
-              height={64}
-              className="h-16 w-16 rounded-full"
-            />
-            <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
-              Clinic visit
-            </p>
-          </div>
-          <h2 className="font-display text-4xl text-navy-900 md:text-5xl">
-            Find us in Karachi, then reserve your chair time online.
+          <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
+            Clinic visit
+          </p>
+          <h2 className="font-display mt-4 text-4xl text-navy-900 md:text-5xl">
+            Arrive prepared—your chair time is reserved online.
           </h2>
           <p className="mt-5 max-w-md text-base leading-relaxed text-muted md:text-lg">
-            We welcome patients for examinations, emergency relief, and aesthetic
-            consultations. Choose a date and time on our booking page so we can
-            prepare for your visit.
+            We see patients for examinations, urgent relief, and aesthetic
+            consults. Pick a date on the booking page so we can have your records
+            and room ready.
           </p>
 
           <div className="relative mt-10 aspect-[16/10] overflow-hidden">
             <Image
-              src="/images/slide-04-reception.png"
-              alt="Clinic reception ready for patient visits"
+              src={visitFeaturedImage.src}
+              alt={visitFeaturedImage.alt}
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
-          </div>
-          <div className="mt-4 grid grid-cols-2 gap-4">
-            <div className="relative aspect-[4/3] overflow-hidden">
-              <Image
-                src="/images/banner-visit.png"
-                alt="Dental clinic entrance"
-                fill
-                className="object-cover"
-                sizes="25vw"
-              />
-            </div>
-            <div className="relative aspect-[4/3] overflow-hidden">
-              <Image
-                src="/images/slide-01-operatory.png"
-                alt="Treatment suite prepared for care"
-                fill
-                className="object-cover"
-                sizes="25vw"
-              />
-            </div>
           </div>
         </motion.div>
 

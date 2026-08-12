@@ -14,7 +14,7 @@ export const clinic = {
   ],
 };
 
-/** Five HD slides for the home hero background slideshow */
+/** Five HD slides exclusive to the home hero background slideshow */
 export const gallery = [
   {
     src: "/images/slide-01-operatory.png",
@@ -38,26 +38,32 @@ export const gallery = [
   },
 ];
 
+export const homeFeaturedImage = {
+  src: "/images/atmosphere-clinic.png",
+  alt: "Composed treatment suite at Dental 7 Aesthetics",
+};
+
+/** Unique pathway images used only on the home page */
 export const homeMoments = [
   {
-    src: "/images/slide-04-reception.png",
-    alt: "Welcoming clinic reception for a calm first visit",
-    caption: "Your first visit starts with a clear exam and honest plan.",
+    src: "/images/family.jpg",
+    alt: "Family-focused dental care setting",
+    caption: "From children to adults, we tailor care to every stage of life.",
   },
   {
-    src: "/images/svc-ortho.png",
+    src: "/images/ortho.jpg",
     alt: "Orthodontic assessment for aligned bites",
     caption: "We evaluate bite, alignment, and long-term enamel health together.",
   },
   {
-    src: "/images/svc-implants.png",
+    src: "/images/implant.jpg",
     alt: "Implant consultation and restorative planning",
     caption: "Missing teeth are restored for function first, aesthetics always.",
   },
   {
-    src: "/images/svc-pediatric.png",
-    alt: "Family-focused dental care setting",
-    caption: "From children to adults, we tailor care to every stage of life.",
+    src: "/images/care.jpg",
+    alt: "Attentive preventive dental care",
+    caption: "Your first visit starts with a clear exam and honest plan.",
   },
 ];
 
@@ -85,6 +91,7 @@ export type Service = {
   image: string;
 };
 
+/** Each service image is unique across the site */
 export const services: Service[] = [
   {
     title: "Smile Design & Makeovers",
@@ -133,7 +140,7 @@ export const services: Service[] = [
     description:
       "Fluoride, hygiene coaching, and recall intervals are personalized to your risk level—because prevention is the foundation of lasting dentistry.",
     category: "General",
-    image: "/images/slide-03-exam.png",
+    image: "/images/consult.jpg",
   },
   {
     title: "Pediatric Dentistry",
@@ -147,7 +154,7 @@ export const services: Service[] = [
     description:
       "We treat decay with bonded composite restorations that match your enamel and conserve healthy tooth structure.",
     category: "Restorative",
-    image: "/images/svc-bonding.png",
+    image: "/images/tools.jpg",
   },
   {
     title: "Root Canal Therapy",
@@ -168,7 +175,7 @@ export const services: Service[] = [
     description:
       "Removable prostheses are fitted for speech, chewing comfort, and a natural appearance—adjusted carefully for daily wear.",
     category: "Restorative",
-    image: "/images/svc-implants.png",
+    image: "/images/smile.jpg",
   },
   {
     title: "Dental Implants",
@@ -196,14 +203,14 @@ export const services: Service[] = [
     description:
       "Impacted or symptomatic third molars are assessed with imaging and removed carefully when they threaten pain, crowding, or infection.",
     category: "Specialty",
-    image: "/images/svc-rootcanal.png",
+    image: "/images/xray.jpg",
   },
   {
     title: "Oral Surgery Support",
     description:
       "Extractions and minor surgical care are performed with clear consent, sterile protocol, and aftercare instructions you can follow at home.",
     category: "Specialty",
-    image: "/images/slide-01-operatory.png",
+    image: "/images/clinic.jpg",
   },
   {
     title: "Emergency Dental Care",
@@ -224,10 +231,11 @@ export const services: Service[] = [
     description:
       "For extensive wear or multiple missing teeth, we rebuild function step by step—restoring bite, comfort, and a cohesive smile.",
     category: "Restorative",
-    image: "/images/svc-smile-design.png",
+    image: "/images/atmosphere-smile.png",
   },
 ];
 
+/** Practice values — shown only on the About page */
 export const values = [
   {
     title: "Diagnosis First",
@@ -248,6 +256,8 @@ export const pageCopy = {
     headline: "Dental care planned by dentists—for health first, beauty always.",
     subcopy:
       "At Dental 7 Aesthetics in Karachi, we diagnose carefully, treat gently, and design smiles that remain functional for years—not just photogenic for a day.",
+    body:
+      "Every recommendation is explained in plain language. We protect tooth structure first, then refine aesthetics with restraint—so your smile stays healthy long after the appointment ends.",
   },
   services: {
     eyebrow: "Clinical Services",
@@ -263,9 +273,9 @@ export const pageCopy = {
   },
   visit: {
     eyebrow: "Visit the Clinic",
-    title: "Book a consultation and begin with a proper dental assessment.",
+    title: "Find us on Jinnah Avenue, opposite Malir Cantt.",
     subtitle:
-      "Visit us on Jinnah Avenue, opposite Malir Cantt. Share your concern and we will guide the right next clinical step.",
+      "Share your concern when you arrive—or reserve a chair online—and we will guide the right next clinical step.",
   },
 };
 
@@ -286,4 +296,19 @@ export const pageBanners = {
     image: "/images/banner-book.png",
     imageAlt: "Clinic desk ready for appointment booking",
   },
+};
+
+export const aboutFeaturedImage = {
+  src: "/images/treatment.jpg",
+  alt: "Dentist providing attentive restorative care",
+};
+
+export const visitFeaturedImage = {
+  src: "/images/reception.jpg",
+  alt: "Clinic reception ready for patient visits",
+};
+
+export const bookFeaturedImage = {
+  src: "/images/hygiene.jpg",
+  alt: "Prepared clinical space for your appointment",
 };

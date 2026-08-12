@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Hero } from "@/components/Hero";
-import { ImageRibbon } from "@/components/ImageRibbon";
 import { HomeHighlights } from "@/components/HomeHighlights";
 import { Section } from "@/components/Section";
 import { clinic } from "@/lib/content";
@@ -9,16 +8,15 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <ImageRibbon />
       <HomeHighlights />
       <Section className="pb-24 md:pb-28">
         <div className="flex flex-col items-start justify-between gap-8 bg-navy-900 px-8 py-12 text-white md:flex-row md:items-center md:px-12">
           <div className="max-w-2xl">
             <p className="text-xs uppercase tracking-[0.24em] text-silver-400">
-              Begin with a proper exam
+              Ready when you are
             </p>
             <h2 className="font-display mt-3 text-3xl leading-snug md:text-4xl">
-              Book a consultation at {clinic.name} and leave with a clear dental plan.
+              Reserve a visit at {clinic.name} and leave with a clear dental plan.
             </h2>
           </div>
           <div className="flex flex-wrap gap-3">

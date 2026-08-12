@@ -4,7 +4,7 @@ import { PageBanner } from "@/components/PageBanner";
 import { BookingForm } from "@/components/BookingForm";
 import { Section } from "@/components/Section";
 import { bookingEmail } from "@/lib/booking";
-import { pageBanners } from "@/lib/content";
+import { bookFeaturedImage, pageBanners } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Book Appointment",
@@ -26,30 +26,21 @@ export default function BookPage() {
       <Section className="py-16 md:py-24">
         <div className="mb-12 grid items-end gap-6 md:grid-cols-[1.2fr_0.8fr]">
           <div className="max-w-2xl">
-            <div className="mb-5 flex items-center gap-4">
-              <Image
-                src="/brand/logo-512.png"
-                alt="Dental 7 Aesthetics logo"
-                width={56}
-                height={56}
-                className="h-14 w-14 rounded-full"
-              />
-              <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
-                Clinic schedule
-              </p>
-            </div>
-            <h2 className="font-display text-3xl text-navy-900 md:text-4xl">
-              Choose a day and time that works for your visit.
+            <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
+              Clinic schedule
+            </p>
+            <h2 className="font-display mt-4 text-3xl text-navy-900 md:text-4xl">
+              Monday–Saturday openings from 11:00 AM to 9:00 PM.
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
-              Clinic hours are Monday–Saturday, 11:00 AM – 9:00 PM. After you submit,
-              we receive your request at {bookingEmail} and confirm availability.
+              After you submit, we receive your request at {bookingEmail} and
+              confirm availability by email.
             </p>
           </div>
           <div className="relative aspect-[16/10] overflow-hidden md:justify-self-end md:w-full md:max-w-md">
             <Image
-              src="/images/slide-03-exam.png"
-              alt="Dental consultation appointment"
+              src={bookFeaturedImage.src}
+              alt={bookFeaturedImage.alt}
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 28rem"

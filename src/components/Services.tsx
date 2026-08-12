@@ -23,12 +23,9 @@ export function Services() {
         <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
           Treatment menu
         </p>
-        <h2 className="font-display mt-4 text-4xl text-navy-900 md:text-5xl">
-          Treatments we provide as your dental clinicians.
-        </h2>
-        <p className="mt-5 text-base leading-relaxed text-muted md:text-lg">
-          Each service below is delivered with diagnosis, consent, and aftercare.
-          Filter by category to find the care pathway that matches your concern.
+        <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
+          Filter by category to find the pathway that matches your concern. Each
+          treatment includes diagnosis, consent, and aftercare.
         </p>
       </div>
 

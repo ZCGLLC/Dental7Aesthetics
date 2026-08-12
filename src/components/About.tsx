@@ -2,14 +2,8 @@
 
 import { SiteImage as Image } from "@/components/SiteImage";
 import { motion } from "framer-motion";
-import { clinic, team, values } from "@/lib/content";
+import { aboutFeaturedImage, clinic, team, values } from "@/lib/content";
 import { Section } from "@/components/Section";
-
-const aboutGallery = [
-  { src: "/images/svc-hygiene.png", alt: "Preventive dental hygiene" },
-  { src: "/images/svc-restorative.png", alt: "Restorative dental treatment" },
-  { src: "/images/svc-smile-design.png", alt: "Refined aesthetic result" },
-];
 
 export function About() {
   return (
@@ -23,31 +17,21 @@ export function About() {
             transition={{ duration: 0.8 }}
             className="max-w-xl"
           >
-            <div className="mb-6 flex items-center gap-4">
-              <Image
-                src="/brand/logo-512.png"
-                alt="Dental 7 Aesthetics logo"
-                width={72}
-                height={72}
-                className="h-[72px] w-[72px] rounded-full shadow-soft"
-              />
-              <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
-                Our clinical philosophy
-              </p>
-            </div>
-            <h2 className="font-display text-4xl leading-tight text-navy-900 md:text-5xl">
+            <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
+              Our clinical philosophy
+            </p>
+            <h2 className="font-display mt-4 text-4xl leading-tight text-navy-900 md:text-5xl">
               We practice dentistry the way we would want it for our own family.
             </h2>
             <p className="mt-6 text-base leading-relaxed text-muted md:text-lg">
-              At {clinic.name}, we are dentists first. That means careful
-              diagnosis, sterile protocol, and treatment plans that prioritize
-              tooth preservation. Aesthetic work is never separated from oral
-              health—we design smiles that also chew, speak, and age well.
+              At {clinic.name}, sterile protocol and tooth preservation come
+              before cosmetic ambition. Aesthetic work is planned so smiles also
+              chew, speak, and age well.
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
-              Patients come to us for cleanings, pain relief, restorative work,
-              and smile refinement. In every case, we explain options, expected
-              outcomes, and aftercare before we begin.
+              Whether you need pain relief, restorative rebuilding, or smile
+              refinement, we outline options, expected outcomes, and aftercare
+              before treatment begins.
             </p>
           </motion.div>
 
@@ -60,8 +44,8 @@ export function About() {
           >
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
-                src="/images/slide-03-exam.png"
-                alt="Dentist providing attentive clinical care"
+                src={aboutFeaturedImage.src}
+                alt={aboutFeaturedImage.alt}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 45vw"
@@ -74,16 +58,6 @@ export function About() {
               </p>
             </div>
           </motion.div>
-        </div>
-      </Section>
-
-      <Section className="pb-8 md:pb-10">
-        <div className="grid gap-4 md:grid-cols-3">
-          {aboutGallery.map((img) => (
-            <div key={img.src} className="relative aspect-[4/3] overflow-hidden">
-              <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="33vw" />
-            </div>
-          ))}
         </div>
       </Section>
 
