@@ -21,7 +21,7 @@ export function Services() {
     <Section className="py-20 md:py-24">
       <div className="max-w-2xl">
         <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
-          Treatment menu
+          Treatment Menu
         </p>
         <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
           Filter by category to find the pathway that matches your concern. Each

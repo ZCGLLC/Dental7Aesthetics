@@ -19,7 +19,7 @@ export function HomeHighlights() {
             className="max-w-xl"
           >
             <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
-              From your dentists
+              From Your Dentists
             </p>
             <h2 className="font-display mt-4 text-4xl leading-tight text-navy-900 md:text-5xl">
               {pageCopy.home.headline}
@@ -58,10 +58,10 @@ export function HomeHighlights() {
       <Section className="pb-24 md:pb-28">
         <div className="mb-10 max-w-xl">
           <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
-            Patient journeys
+            Patient Journeys
           </p>
           <h3 className="font-display mt-3 text-3xl text-navy-900 md:text-4xl">
-            Care pathways we guide every week.
+            Care Pathways We Guide Every Week.
           </h3>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

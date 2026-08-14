@@ -13,10 +13,10 @@ export default function HomePage() {
         <div className="flex flex-col items-start justify-between gap-8 bg-navy-900 px-8 py-12 text-white md:flex-row md:items-center md:px-12">
           <div className="max-w-2xl">
             <p className="text-xs uppercase tracking-[0.24em] text-silver-400">
-              Ready when you are
+              Ready When You Are
             </p>
             <h2 className="font-display mt-3 text-3xl leading-snug md:text-4xl">
-              Reserve a visit at {clinic.name} and leave with a clear dental plan.
+              Reserve A Visit At {clinic.name} And Leave With A Clear Dental Plan.
             </h2>
           </div>
           <div className="flex flex-wrap gap-3">

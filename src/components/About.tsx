@@ -18,10 +18,10 @@ export function About() {
             className="max-w-xl"
           >
             <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
-              Our clinical philosophy
+              Our Clinical Philosophy
             </p>
             <h2 className="font-display mt-4 text-4xl leading-tight text-navy-900 md:text-5xl">
-              We practice dentistry the way we would want it for our own family.
+              We Practice Dentistry The Way We Would Want It For Our Own Family.
             </h2>
             <p className="mt-6 text-base leading-relaxed text-muted md:text-lg">
               At {clinic.name}, sterile protocol and tooth preservation come
@@ -54,7 +54,7 @@ export function About() {
             </div>
             <div className="absolute bottom-0 left-0 right-0 bg-navy-900/95 px-6 py-5 text-silver-100 md:bottom-6 md:left-6 md:right-auto md:max-w-sm">
               <p className="font-display text-2xl leading-snug">
-                Comfortable dentistry with clear clinical reasoning.
+                Comfortable Dentistry With Clear Clinical Reasoning.
               </p>
             </div>
           </motion.div>
@@ -63,7 +63,7 @@ export function About() {
 
       <Section className="py-20 md:py-24">
         <h3 className="font-display text-3xl text-navy-900 md:text-4xl">
-          Standards that guide our chairside decisions
+          Standards That Guide Our Chairside Decisions
         </h3>
         <div className="mt-10 grid gap-8 md:grid-cols-3 md:gap-10">
           {values.map((value) => (
@@ -79,10 +79,10 @@ export function About() {
         <div className="grid items-end gap-6 md:grid-cols-2 md:gap-10">
           <div>
             <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
-              Our dentists
+              Our Dentists
             </p>
             <h3 className="font-display mt-4 text-4xl text-navy-900 md:text-5xl">
-              Clinicians responsible for your care.
+              Clinicians Responsible For Your Care.
             </h3>
           </div>
           <p className="max-w-md text-muted md:justify-self-end md:text-right">

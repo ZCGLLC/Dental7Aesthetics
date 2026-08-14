@@ -17,10 +17,10 @@ export function Visit() {
           transition={{ duration: 0.7 }}
         >
           <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
-            Clinic visit
+            Clinic Visit
           </p>
           <h2 className="font-display mt-4 text-4xl text-navy-900 md:text-5xl">
-            Arrive prepared—your chair time is reserved online.
+            Arrive Prepared—Your Chair Time Is Reserved Online.
           </h2>
           <p className="mt-5 max-w-md text-base leading-relaxed text-muted md:text-lg">
             We see patients for examinations, urgent relief, and aesthetic

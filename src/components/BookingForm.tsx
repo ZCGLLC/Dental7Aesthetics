@@ -154,7 +154,7 @@ export function BookingForm() {
 
       <div>
         <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
-          Select date
+          Select Date
         </p>
         <div className="mt-4 border border-navy-900/10 bg-white/80 p-5 md:p-6">
           <div className="mb-5 flex items-center justify-between gap-3">
@@ -227,7 +227,7 @@ export function BookingForm() {
         </div>
 
         <p className="mt-8 text-xs uppercase tracking-[0.24em] text-navy-700/70">
-          Select time
+          Select Time
         </p>
         <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3">
           {timeSlots.map((slot) => {
@@ -264,7 +264,7 @@ export function BookingForm() {
       </div>
 
       <div className="shine-border bg-navy-900 p-7 text-white shadow-glow md:p-10">
-        <h2 className="font-display text-3xl">Your details</h2>
+        <h2 className="font-display text-3xl">Your Details</h2>
         <p className="mt-2 text-sm text-silver-300">
           After you submit, we receive your request at {bookingEmail} and confirm your slot.
         </p>

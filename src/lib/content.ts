@@ -253,7 +253,7 @@ export const values = [
 
 export const pageCopy = {
   home: {
-    headline: "Dental care planned by dentists—for health first, beauty always.",
+    headline: "Dental Care Planned By Dentists—For Health First, Beauty Always.",
     subcopy:
       "At Dental 7 Aesthetics in Karachi, we diagnose carefully, treat gently, and design smiles that remain functional for years—not just photogenic for a day.",
     body:
@@ -261,19 +261,19 @@ export const pageCopy = {
   },
   services: {
     eyebrow: "Clinical Services",
-    title: "Comprehensive dentistry for every stage of oral health.",
+    title: "Comprehensive Dentistry For Every Stage Of Oral Health.",
     subtitle:
       "From preventive cleanings to implants and smile design, we provide the treatments we would recommend for our own families—explained clearly before we begin.",
   },
   about: {
     eyebrow: "About Our Practice",
-    title: "A dentist-led clinic built on trust, skill, and composed care.",
+    title: "A Dentist-Led Clinic Built On Trust, Skill, And Composed Care.",
     subtitle:
       "Meet the clinicians behind Dental 7 Aesthetics and the standards that guide every appointment.",
   },
   visit: {
-    eyebrow: "Visit the Clinic",
-    title: "Find us on Jinnah Avenue, opposite Malir Cantt.",
+    eyebrow: "Visit The Clinic",
+    title: "Find Us On Jinnah Avenue, Opposite Malir Cantt.",
     subtitle:
       "Share your concern when you arrive—or reserve a chair online—and we will guide the right next clinical step.",
   },

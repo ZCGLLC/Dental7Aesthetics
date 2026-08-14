@@ -17,7 +17,7 @@ export default function BookPage() {
     <>
       <PageBanner
         eyebrow="Appointments"
-        title="Book your dental appointment online."
+        title="Book Your Dental Appointment Online."
         subtitle="Select an available date and time, then share your details. Your request is sent directly to our clinic inbox."
         image={pageBanners.book.image}
         imageAlt={pageBanners.book.imageAlt}
@@ -27,10 +27,10 @@ export default function BookPage() {
         <div className="mb-12 grid items-end gap-6 md:grid-cols-[1.2fr_0.8fr]">
           <div className="max-w-2xl">
             <p className="text-xs uppercase tracking-[0.24em] text-navy-700/70">
-              Clinic schedule
+              Clinic Schedule
             </p>
             <h2 className="font-display mt-4 text-3xl text-navy-900 md:text-4xl">
-              Monday–Saturday openings from 11:00 AM to 9:00 PM.
+              Monday–Saturday Openings From 11:00 AM To 9:00 PM.
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted md:text-lg">
               After you submit, we receive your request at {bookingEmail} and
