@@ -10,6 +10,59 @@ const links = [
   { href: "/book/", label: "Book Appointment" },
 ];
 
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        x="2.5"
+        y="2.5"
+        width="19"
+        height="19"
+        rx="5.5"
+        stroke="currentColor"
+        strokeWidth="1.6"
+      />
+      <circle cx="12" cy="12" r="4.25" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="17.35" cy="6.65" r="1.1" fill="currentColor" />
+    </svg>
+  );
+}
+
+function LinkedInIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S.02 4.88.02 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8.25h4.6V23H.2V8.25zM8.34 8.25h4.41v2.01h.06c.61-1.16 2.11-2.38 4.35-2.38 4.65 0 5.51 3.06 5.51 7.04V23h-4.6v-6.63c0-1.58-.03-3.61-2.2-3.61-2.2 0-2.54 1.72-2.54 3.5V23h-4.59V8.25z" />
+    </svg>
+  );
+}
+
+const socials = [
+  {
+    href: clinic.instagram,
+    label: "Instagram",
+    handle: clinic.instagramHandle,
+    Icon: InstagramIcon,
+  },
+  {
+    href: clinic.linkedin,
+    label: "LinkedIn",
+    handle: "Dental 7 Aesthetics",
+    Icon: LinkedInIcon,
+  },
+];
+
 export function Footer() {
   return (
     <footer className="border-t border-navy-900/10 bg-navy-950 text-silver-200">
@@ -50,30 +103,47 @@ export function Footer() {
           </div>
           <div className="text-sm sm:text-right">
             <p className="text-[11px] uppercase tracking-[0.2em] text-silver-500">Connect</p>
-            <div className="mt-3 flex flex-col gap-2 sm:items-end">
-              <a
-                href={clinic.instagram}
-                target="_blank"
-                rel="noreferrer"
-                className="transition hover:text-white"
-              >
-                Instagram {clinic.instagramHandle}
-              </a>
-              <a
-                href={clinic.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="transition hover:text-white"
-              >
-                LinkedIn
-              </a>
+            <div className="mt-3 flex flex-col gap-3 sm:items-end">
+              {socials.map(({ href, label, handle, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2.5 transition hover:text-white"
+                >
+                  <Icon className="h-4 w-4 shrink-0" />
+                  <span>
+                    {label}
+                    <span className="text-silver-500"> · {handle}</span>
+                  </span>
+                </a>
+              ))}
               <p className="max-w-xs text-silver-500 sm:text-right">{clinic.location}</p>
             </div>
           </div>
         </div>
       </div>
-      <div className="border-t border-white/10 px-5 py-5 text-center text-xs text-silver-500 md:px-8">
-        © {new Date().getFullYear()} Dental 7 Aesthetics. All rights reserved.
+      <div className="border-t border-white/10 px-5 py-5 md:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 sm:flex-row">
+          <p className="text-center text-xs text-silver-500 sm:text-left">
+            © {new Date().getFullYear()} Dental 7 Aesthetics. All rights reserved.
+          </p>
+          <div className="flex items-center gap-3">
+            {socials.map(({ href, label, Icon }) => (
+              <a
+                key={`bottom-${label}`}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={label}
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-silver-400 transition hover:border-white/30 hover:text-white"
+              >
+                <Icon className="h-4 w-4" />
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </footer>
   );
