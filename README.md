@@ -46,4 +46,4 @@ npm run build:pages
 
 - Logo assets: `public/brand/`
 - Instagram: [instagram.com/dental7aesthetics](https://www.instagram.com/dental7aesthetics/)
-- Location: Jinnah Avenue, opposite Malir Cantt, Karachi
+- Location: Fatima Gold Residency, Opposite Malir Cantt, Jinnah Avenue, Karachi
