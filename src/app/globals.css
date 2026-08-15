@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy-950: #040c18;
+  --navy-900: #071527;
+  --navy-800: #0d243f;
+  --navy-700: #163456;
+  --silver-100: #f4f7fb;
+  --silver-200: #e4ebf4;
+  --silver-300: #c5d4e8;
+  --silver-400: #9bb0cc;
+  --pearl: #f7f9fc;
+  --ink: #142033;
+  --muted: #5c6b80;
+  --accent: #a8bdd6;
+  --background: var(--pearl);
+  --foreground: var(--ink);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(165, 189, 220, 0.22), transparent 55%),
+    radial-gradient(900px 500px at 90% 0%, rgba(12, 36, 64, 0.06), transparent 50%),
+    linear-gradient(180deg, #f7f9fc 0%, #eef3f8 45%, #f7f9fc 100%);
+  font-family: var(--font-body), "Segoe UI", sans-serif;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  max-width: 100%;
+}
+
+main {
+  min-width: 0;
+}
+
+::selection {
+  background: rgba(15, 42, 74, 0.18);
+  color: var(--navy-900);
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.texture-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.shine-border {
+  position: relative;
+}
+
+.shine-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.55),
+    rgba(155, 176, 204, 0.2),
+    rgba(255, 255, 255, 0.35)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes softPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-rise {
+  animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-rise-delay-1 {
+  animation-delay: 0.12s;
+}
+
+.animate-rise-delay-2 {
+  animation-delay: 0.24s;
+}
+
+.animate-rise-delay-3 {
+  animation-delay: 0.36s;
+}
+
+.animate-float {
+  animation: floaty 6s ease-in-out infinite;
+}
+
+.animate-soft-pulse {
+  animation: softPulse 4.5s ease-in-out infinite;
+}

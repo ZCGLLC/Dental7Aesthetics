@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Dental 7 Aesthetics mark">
+  <defs>
+    <linearGradient id="tooth" x1="30%" y1="10%" x2="70%" y2="90%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="55%" stop-color="#E8EEF6"/>
+      <stop offset="100%" stop-color="#B7C7DC"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D7E2F0"/>
+      <stop offset="100%" stop-color="#8FA6C4"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="#071527"/>
+  <circle cx="100" cy="100" r="90" fill="none" stroke="url(#ring)" stroke-width="3.5"/>
+  <path
+    d="M100 42
+       C118 42 132 54 136 72
+       C140 92 138 112 132 130
+       C126 148 116 162 108 168
+       C104 171 100 172 100 172
+       C100 172 96 171 92 168
+       C84 162 74 148 68 130
+       C62 112 60 92 64 72
+       C68 54 82 42 100 42 Z"
+    fill="none"
+    stroke="url(#tooth)"
+    stroke-width="9"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M112 58
+       C122 68 126 86 124 108
+       C122 128 116 146 108 158"
+    fill="none"
+    stroke="url(#tooth)"
+    stroke-width="7"
+    stroke-linecap="round"
+    opacity="0.85"
+  />
+</svg>
