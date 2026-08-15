@@ -110,9 +110,11 @@ export function Hero() {
         </motion.div>
 
         <div className="mt-14 flex flex-wrap items-end justify-between gap-6">
-          <p className="max-w-md text-xs uppercase tracking-[0.22em] text-silver-200/90">
-            {clinic.location}
-          </p>
+          <div className="max-w-lg text-sm leading-relaxed text-silver-200/90">
+            {clinic.locationLines.map((line) => (
+              <p key={line}>{line}</p>
+            ))}
+          </div>
           <div className="flex items-center gap-2" aria-label="Background slideshow">
             {gallery.map((item, i) => (
               <button

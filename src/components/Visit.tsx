@@ -9,7 +9,7 @@ import { Section } from "@/components/Section";
 export function Visit() {
   return (
     <Section className="py-20 md:py-24">
-      <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="grid items-start gap-12 lg:grid-cols-2 lg:gap-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -46,38 +46,49 @@ export function Visit() {
           transition={{ duration: 0.7, delay: 0.08 }}
           className="h-fit border border-navy-900/10 bg-white/70 p-7 md:p-10"
         >
-          <div className="space-y-6">
+          <div className="space-y-8">
             <div>
               <p className="text-[11px] uppercase tracking-[0.2em] text-silver-500">
                 Address
               </p>
-              <p className="mt-2 text-lg text-navy-900">{clinic.location}</p>
-              <p className="text-muted">{clinic.city}</p>
+              <address className="mt-3 not-italic">
+                {clinic.locationLines.map((line) => (
+                  <p key={line} className="text-lg leading-snug text-navy-900">
+                    {line}
+                  </p>
+                ))}
+              </address>
             </div>
+
             <div>
               <p className="text-[11px] uppercase tracking-[0.2em] text-silver-500">
                 Hours
               </p>
-              <ul className="mt-2 max-w-sm space-y-1 text-navy-900">
+              <ul className="mt-3 space-y-2 text-navy-900">
                 {clinic.hours.map((item) => (
-                  <li key={item.day} className="flex justify-between gap-6">
+                  <li
+                    key={item.day}
+                    className="grid grid-cols-[1fr_auto] items-baseline gap-4 text-base"
+                  >
                     <span>{item.day}</span>
-                    <span className="text-muted">{item.time}</span>
+                    <span className="text-right text-muted">{item.time}</span>
                   </li>
                 ))}
               </ul>
             </div>
+
             <div>
               <p className="text-[11px] uppercase tracking-[0.2em] text-silver-500">
                 Email
               </p>
               <a
                 href={`mailto:${clinic.email}`}
-                className="mt-2 inline-block text-lg text-navy-900 underline decoration-silver-400 underline-offset-4 transition hover:decoration-navy-900"
+                className="mt-3 inline-block break-all text-lg text-navy-900 underline decoration-silver-400 underline-offset-4 transition hover:decoration-navy-900"
               >
                 {clinic.email}
               </a>
             </div>
+
             <div>
               <p className="text-[11px] uppercase tracking-[0.2em] text-silver-500">
                 Social
@@ -86,7 +97,7 @@ export function Visit() {
                 href={clinic.instagram}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-2 inline-block text-lg text-navy-900 underline decoration-silver-400 underline-offset-4 transition hover:decoration-navy-900"
+                className="mt-3 inline-block text-lg text-navy-900 underline decoration-silver-400 underline-offset-4 transition hover:decoration-navy-900"
               >
                 {clinic.instagramHandle}
               </a>

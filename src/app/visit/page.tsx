@@ -6,7 +6,7 @@ import { pageBanners, pageCopy } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Visit",
   description:
-    "Book a dental consultation at Dental 7 Aesthetics on Jinnah Avenue, opposite Malir Cantt, Karachi.",
+    "Book a dental consultation at Dental 7 Aesthetics, Fatima Gold Residency, Opposite Malir Cantt, Jinnah Avenue, Karachi.",
 };
 
 export default function VisitPage() {

@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Dental 7 Aesthetics",
     description:
-      "Certified dental experts in general & aesthetic dentistry. Jinnah Avenue, opposite Malir Cantt, Karachi.",
+      "Certified dental experts in general & aesthetic dentistry. Fatima Gold Residency, Opposite Malir Cantt, Jinnah Avenue, Karachi.",
     url: "https://dental7aesthetics.com",
     siteName: "Dental 7 Aesthetics",
     images: [{ url: asset("/brand/logo-512.png"), width: 512, height: 512 }],

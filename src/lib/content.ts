@@ -2,7 +2,12 @@ export const clinic = {
   name: "Dental 7 Aesthetics",
   tagline:
     "As your dentists in Karachi, we protect oral health and design smiles with clinical precision.",
-  location: "Jinnah Avenue, opposite Malir Cantt, Karachi",
+  location: "Fatima Gold Residency, Opposite Malir Cantt, Jinnah Avenue, Karachi",
+  locationLines: [
+    "Fatima Gold Residency",
+    "Opposite Malir Cantt, Jinnah Avenue",
+    "Karachi, Pakistan",
+  ],
   city: "Karachi, Pakistan",
   instagram: "https://www.instagram.com/dental7aesthetics/",
   instagramHandle: "@dental7aesthetics",
@@ -10,7 +15,7 @@ export const clinic = {
   linkedin: "https://www.linkedin.com/company/dental-7-aesthetics",
   hours: [
     { day: "Monday – Saturday", time: "11:00 AM – 9:00 PM" },
-    { day: "Sunday", time: "By appointment" },
+    { day: "Sunday", time: "By Appointment" },
   ],
 };
 
@@ -273,7 +278,7 @@ export const pageCopy = {
   },
   visit: {
     eyebrow: "Visit The Clinic",
-    title: "Find Us On Jinnah Avenue, Opposite Malir Cantt.",
+    title: "Find Us At Fatima Gold Residency, Opposite Malir Cantt.",
     subtitle:
       "Share your concern when you arrive—or reserve a chair online—and we will guide the right next clinical step.",
   },

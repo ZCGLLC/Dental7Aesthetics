@@ -119,7 +119,11 @@ export function Footer() {
                   </span>
                 </a>
               ))}
-              <p className="max-w-xs text-silver-500 sm:text-right">{clinic.location}</p>
+              <address className="mt-1 max-w-[16rem] not-italic leading-relaxed text-silver-500 sm:text-right">
+                {clinic.locationLines.map((line) => (
+                  <p key={line}>{line}</p>
+                ))}
+              </address>
             </div>
           </div>
         </div>
